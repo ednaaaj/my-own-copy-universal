@@ -1,6 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Roboto, Work_Sans } from "next/font/google";
 import "./globals.css";
+
+const workSans = Work_Sans({
+  variable: "--font-work-sans",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const roboto = Roboto({
+  variable: "--font-roboto",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +25,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Universal",
-  description: "Next.js + TypeScript + Tailwind starter.",
+  title: "Universal Orthodontic Lab",
+  description:
+    "Dental lab solutions, digital workflows, and appliances built for clinicians.",
 };
 
 export default function RootLayout({
@@ -25,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-slate-50 text-slate-900 antialiased`}
+        className={`${workSans.variable} ${roboto.variable} ${geistSans.variable} ${geistMono.variable} bg-[#f4f4f4] text-slate-900 antialiased`}
       >
         {children}
       </body>
