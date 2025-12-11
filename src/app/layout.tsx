@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Roboto, Work_Sans } from "next/font/google";
+import { Geist, Geist_Mono, Karla, Roboto, Work_Sans } from "next/font/google";
 import "./globals.css";
 
 const workSans = Work_Sans({
   variable: "--font-work-sans",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const karla = Karla({
+  variable: "--font-karla",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -38,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${workSans.variable} ${roboto.variable} ${geistSans.variable} ${geistMono.variable} bg-[#f4f4f4] text-slate-900 antialiased`}
+        className={`${workSans.variable} ${roboto.variable} ${karla.variable} ${geistSans.variable} ${geistMono.variable} bg-white text-slate-900 antialiased`}
       >
         {children}
       </body>

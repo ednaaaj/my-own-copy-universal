@@ -12,8 +12,8 @@ const navLinks = [
 
 export default function HomePage() {
   return (
-    <main className="bg-[#ededed]">
-      <section className="relative w-full overflow-hidden rounded-b-[110px] bg-white pb-0 shadow-sm">
+    <main className="bg-white">
+      <section className="relative w-full overflow-hidden rounded-b-[110px] bg-white pb-0 shadow-sm border-b border-[#e6e6e6]">
         <div className="absolute inset-0">
           <video
             className="h-full w-full object-cover"
@@ -27,7 +27,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/88" />
         </div>
 
-        <div className="relative z-10 px-4 pb-0 pt-6 sm:px-8 lg:px-12">
+        <div className="relative z-10 px-4 pb-0 pt-8 sm:px-8 lg:px-12">
           <header className="flex justify-center">
             <div className="flex w-full max-w-[1686px] items-center gap-6 overflow-hidden rounded-[60px] border border-white/60 bg-white/90 px-6 py-3 shadow-[0_6px_9px_4px_rgba(76,76,76,0.2)] backdrop-blur">
               <Link href="/" className="flex-shrink-0">
@@ -68,8 +68,8 @@ export default function HomePage() {
                     height={25}
                     className="h-[20px] w-[20px] object-contain"
                   />
-                  <span className="relative text-white">Aligner Portal</span>
-                  <span className="relative -mb-[2px] text-lg leading-none text-white">
+                  <span className="relative z-10 text-white">Aligner Portal</span>
+                  <span className="relative z-10 -mb-[2px] text-lg leading-none text-white">
                     →
                   </span>
                 </Link>
@@ -82,8 +82,8 @@ export default function HomePage() {
                   }}
                 >
                   <span className="pointer-events-none absolute inset-[1px] rounded-full bg-gradient-to-b from-white/35 to-white/10" />
-                  <span className="relative text-white">Rio Portal</span>
-                  <span className="relative -mb-[2px] text-lg leading-none text-white">
+                  <span className="relative z-10 text-white">Rio Portal</span>
+                  <span className="relative z-10 -mb-[2px] text-lg leading-none text-white">
                     →
                   </span>
                 </Link>
@@ -100,8 +100,8 @@ export default function HomePage() {
             </h1>
           </div>
 
-          <div className="relative mx-auto mt-8 max-w-5xl">
-            <div className="relative flex justify-center -mb-6">
+          <div className="relative mx-auto mt-8 max-w-6xl">
+            <div className="relative flex justify-center -mb-20 sm:-mb-24 lg:-mb-28">
               <Image
                 src="/images/hero/hero-teeth-center.png"
                 alt="Dental appliances"
@@ -144,6 +144,50 @@ export default function HomePage() {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-white px-4 py-24 sm:py-28 lg:py-32">
+        <div className="pointer-events-none absolute left-[-10px] top-[52%] w-[280px] -translate-y-1/2 opacity-80 sm:left-[10px] sm:w-[320px] lg:left-[40px] lg:w-[360px]">
+          <Image
+            src="/images/who-we-are/left-object-floating.png"
+            alt=""
+            width={436}
+            height={512}
+            className="h-auto w-full object-contain"
+          />
+        </div>
+        <div className="pointer-events-none absolute right-[-10px] top-[52%] w-[280px] -translate-y-1/2 opacity-80 sm:right-[10px] sm:w-[320px] lg:right-[40px] lg:w-[360px]">
+          <Image
+            src="/images/who-we-are/right-object-floating.png"
+            alt=""
+            width={436}
+            height={512}
+            className="h-auto w-full object-contain"
+          />
+        </div>
+        <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-6 text-center">
+          <p className="font-karla text-[20px] font-medium uppercase leading-[20px] text-black">
+            Who We Are
+          </p>
+          <p className="font-display text-[20px] font-normal leading-[32px] tracking-[0.5px] text-[#1f1f1f] sm:text-[20px]">
+            Based in Southern California, Universal Orthodontic Lab is a
+            full-service, custom orthodontic laboratory with decades of
+            experience. Since 1985, we&apos;ve been dedicated to producing
+            high-quality appliances, combining trusted craftsmanship with
+            cutting-edge technology. Today, we&apos;re proud to offer advanced
+            solutions through our state-of-the-art digital lab.
+          </p>
+          <Link
+            href="#"
+            className="relative mt-2 inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-[#068cff] px-8 py-3 text-[14px] font-semibold uppercase tracking-[0.02em] text-white shadow-[0_10px_25px_rgba(6,140,255,0.35)] ring-1 ring-[#4db8ff]/70 transition hover:brightness-105"
+          >
+            <span className="pointer-events-none absolute inset-[1px] rounded-full bg-gradient-to-b from-white/25 to-white/10" />
+            <span className="relative text-white">Our Solutions</span>
+            <span className="relative -mb-[1px] text-base leading-none text-white">
+              →
+            </span>
+          </Link>
         </div>
       </section>
     </main>
