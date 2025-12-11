@@ -10,6 +10,7 @@ type ProductCardProps = {
   description: React.ReactNode;
   buttonColor: string;
   buttonShadow: string;
+  imageClassName?: string;
 };
 
 export function ProductCard({
@@ -21,6 +22,7 @@ export function ProductCard({
   description,
   buttonColor,
   buttonShadow,
+  imageClassName,
 }: ProductCardProps) {
   return (
     <article className="relative flex w-full max-w-[400px] flex-col gap-3">
@@ -30,7 +32,7 @@ export function ProductCard({
           alt={title}
           width={200}
           height={40}
-          className="h-[32px] w-auto object-contain"
+          className="h-[28px] max-w-[200px] w-auto object-contain"
         />
       </div>
 
@@ -40,7 +42,7 @@ export function ProductCard({
           alt={title}
           width={360}
           height={260}
-          className="h-[235px] w-auto object-contain"
+          className={`max-h-[220px] w-auto object-contain ${imageClassName ?? ""}`}
         />
       </div>
 

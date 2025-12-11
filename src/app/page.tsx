@@ -261,6 +261,7 @@ export default function HomePage() {
             }
             buttonColor="bg-[#1f0d6c]"
             buttonShadow="shadow-[0_10px_25px_rgba(31,13,108,0.32)]"
+            imageClassName="max-h-[200px]"
           />
         </div>
       </section>
