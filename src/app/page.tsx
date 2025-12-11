@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ProductCard } from "@/components/cards/product-card";
 
 const navLinks = [
   { href: "#", label: "Home" },
@@ -188,6 +189,79 @@ export default function HomePage() {
               →
             </span>
           </Link>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-white px-4 pb-24 pt-10 sm:pb-28 sm:pt-12 lg:pb-32 lg:pt-16">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute left-[8%] top-[8%] h-[320px] w-[320px] bg-[radial-gradient(circle_at_center,rgba(6,140,255,0.22)_0%,rgba(255,255,255,0)_65%)] blur-[2px]" />
+          <div className="absolute left-[12%] bottom-[6%] h-[340px] w-[340px] bg-[radial-gradient(circle_at_center,rgba(6,140,255,0.18)_0%,rgba(255,255,255,0)_70%)]" />
+          <div className="absolute right-[6%] top-[10%] h-[360px] w-[360px] bg-[radial-gradient(circle_at_center,rgba(6,140,255,0.18)_0%,rgba(255,255,255,0)_70%)]" />
+          <div className="absolute right-[18%] bottom-[8%] h-[380px] w-[380px] bg-[radial-gradient(circle_at_center,rgba(6,140,255,0.22)_0%,rgba(255,255,255,0)_70%)] blur-[2px]" />
+        </div>
+        <div className="relative mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <ProductCard
+            title="Metal Worx"
+            subtitle="Laser Sintered"
+            accent="#000000"
+            logo="/images/who-we-are/metal-worx-logo.png"
+            image="/images/who-we-are/metal-worx-teeth-card.png"
+            description={
+              <>
+                <strong>Metal Worx</strong> represents the next generation of
+                orthodontic appliances, crafted using{" "}
+                <strong>advanced laser sintering technology</strong>. This
+                process ensures exceptional <strong>accuracy</strong>,{" "}
+                <strong>strength</strong>, and a <strong>precise fit</strong>—
+                delivering consistent, <strong>high-quality</strong> results for
+                every patient.
+              </>
+            }
+            buttonColor="bg-black"
+            buttonShadow="shadow-[0_10px_25px_rgba(0,0,0,0.25)]"
+          />
+          <ProductCard
+            title="U Aligner"
+            subtitle="Clear Solutions for Every Smile"
+            accent="#F27128"
+            logo="/images/who-we-are/aligner-logo.png"
+            image="/images/who-we-are/aligner-teeth-logo-card.png"
+            description={
+              <>
+                <strong>U-Aligner</strong> is designed to treat a wide range of
+                orthodontic cases, including <strong>spacing</strong>,{" "}
+                <strong>crowding</strong>, <strong>open bite</strong>,{" "}
+                <strong>crossbite</strong>, <strong>underbite</strong>, and{" "}
+                <strong>overbite</strong>. Backed by a skilled team of
+                specialists, we’ve helped patients of <strong>all ages</strong>,
+                from teens to kids to achieve <strong>confident</strong>,{" "}
+                <strong>healthy smiles</strong> with a clear path to a brighter
+                future.
+              </>
+            }
+            buttonColor="bg-[#f27128]"
+            buttonShadow="shadow-[0_10px_25px_rgba(242,113,40,0.35)]"
+          />
+          <ProductCard
+            title="The Perio Max System"
+            subtitle="Targeted Gum Health at Home"
+            accent="#1F0D6C"
+            logo="/images/who-we-are/perio-max-logo.png"
+            image="/images/who-we-are/periomaxset-items-card.png"
+            description={
+              <>
+                The Perio Max System offers an innovative approach to managing
+                gum health by delivering medication below and between the gums.
+                Using <strong>custom-fabricated trays</strong> and a specially
+                formulated <strong>homecare gel</strong>, this system is
+                designed to help reduce or prevent{" "}
+                <strong>gingivitis</strong> and <strong>periodontitis</strong>—
+                promoting healthier gums from the <strong>comfort of home</strong>.
+              </>
+            }
+            buttonColor="bg-[#1f0d6c]"
+            buttonShadow="shadow-[0_10px_25px_rgba(31,13,108,0.32)]"
+          />
         </div>
       </section>
     </main>
