@@ -1,2 +1,2 @@
 # universal-website
-New Website design for Universal.
+Next.js + TypeScript + Tailwind starter.
