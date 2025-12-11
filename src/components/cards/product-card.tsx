@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 type ProductCardProps = {
   title: string;
@@ -7,7 +8,7 @@ type ProductCardProps = {
   accent: string;
   logo: string;
   image: string;
-  description: React.ReactNode;
+  description: ReactNode;
   buttonColor: string;
   buttonShadow: string;
   imageClassName?: string;
