@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ProductCard } from "@/components/cards/product-card";
 import { OurProducts } from "@/components/sections/our-products";
+import { OurDigitalSolutions } from "@/components/sections/our-digital-solutions";
 
 const navLinks = [
   { href: "#", label: "Home" },
@@ -268,6 +269,7 @@ export default function HomePage() {
       </section>
 
       <OurProducts />
+      <OurDigitalSolutions />
     </main>
   );
 }
