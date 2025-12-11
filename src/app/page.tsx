@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ProductCard } from "@/components/cards/product-card";
 import { OurProducts } from "@/components/sections/our-products";
 import { OurDigitalSolutions } from "@/components/sections/our-digital-solutions";
+import { ClientsSay } from "@/components/sections/clients-say";
 
 const navLinks = [
   { href: "#", label: "Home" },
@@ -270,6 +271,7 @@ export default function HomePage() {
 
       <OurProducts />
       <OurDigitalSolutions />
+      <ClientsSay />
     </main>
   );
 }
