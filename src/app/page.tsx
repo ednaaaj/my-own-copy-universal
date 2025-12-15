@@ -196,13 +196,59 @@ export default function HomePage() {
       </section>
 
       <section className="relative overflow-hidden bg-white px-4 pb-24 pt-10 sm:pb-28 sm:pt-12 lg:pb-32 lg:pt-16">
+        {/* Background gradient ellipses - closer together with overlap */}
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-[8%] top-[8%] h-[320px] w-[320px] bg-[radial-gradient(circle_at_center,rgba(6,140,255,0.22)_0%,rgba(255,255,255,0)_65%)] blur-[2px]" />
-          <div className="absolute left-[12%] bottom-[6%] h-[340px] w-[340px] bg-[radial-gradient(circle_at_center,rgba(6,140,255,0.18)_0%,rgba(255,255,255,0)_70%)]" />
-          <div className="absolute right-[6%] top-[10%] h-[360px] w-[360px] bg-[radial-gradient(circle_at_center,rgba(6,140,255,0.18)_0%,rgba(255,255,255,0)_70%)]" />
-          <div className="absolute right-[18%] bottom-[8%] h-[380px] w-[380px] bg-[radial-gradient(circle_at_center,rgba(6,140,255,0.22)_0%,rgba(255,255,255,0)_70%)] blur-[2px]" />
+          {/* Left bottom ellipse */}
+          <div
+            className="absolute left-[80px] top-[180px] h-[520px] w-[520px]"
+            style={{
+              background:
+                "radial-gradient(50% 50% at 50% 50%, rgba(6, 140, 255, 0.35) 0%, rgba(255, 255, 255, 0) 100%)",
+            }}
+          />
+          {/* Left middle ellipse */}
+          <div
+            className="absolute left-[120px] top-[480px] h-[580px] w-[580px]"
+            style={{
+              background:
+                "radial-gradient(50% 50% at 50% 50%, rgba(6, 140, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%)",
+            }}
+          />
+          {/* Center bottom ellipse */}
+          <div
+            className="absolute left-[calc(50%-320px)] top-[460px] h-[640px] w-[640px]"
+            style={{
+              background:
+                "radial-gradient(50% 50% at 50% 50%, rgba(6, 140, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%)",
+            }}
+          />
+          {/* Right top ellipse */}
+          <div
+            className="absolute right-[60px] top-[20px] h-[720px] w-[720px]"
+            style={{
+              background:
+                "radial-gradient(50% 50% at 50% 50%, rgba(6, 140, 255, 0.38) 0%, rgba(255, 255, 255, 0) 100%)",
+            }}
+          />
+          {/* Center top ellipse */}
+          <div
+            className="absolute right-[calc(50%-280px)] top-[80px] h-[680px] w-[680px]"
+            style={{
+              background:
+                "radial-gradient(50% 50% at 50% 50%, rgba(6, 140, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%)",
+            }}
+          />
+          {/* Center bottom right ellipse */}
+          <div
+            className="absolute right-[calc(50%-300px)] top-[500px] h-[680px] w-[680px]"
+            style={{
+              background:
+                "radial-gradient(50% 50% at 50% 50%, rgba(6, 140, 255, 0.33) 0%, rgba(255, 255, 255, 0) 100%)",
+            }}
+          />
         </div>
-        <div className="relative mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+        <div className="relative mx-auto flex max-w-[1326px] flex-wrap items-start justify-center gap-[31px]">
           <ProductCard
             title="Metal Worx"
             subtitle="Laser Sintered"
@@ -213,15 +259,14 @@ export default function HomePage() {
               <>
                 <strong>Metal Worx</strong> represents the next generation of
                 orthodontic appliances, crafted using{" "}
-                <strong>advanced laser sintering technology</strong>. This
-                process ensures exceptional <strong>accuracy</strong>,{" "}
-                <strong>strength</strong>, and a <strong>precise fit</strong>—
-                delivering consistent, <strong>high-quality</strong> results for
-                every patient.
+                <strong>advanced laser sintering technology.</strong> This
+                process ensures exceptional{" "}
+                <strong>accuracy, strength, and a precise fit</strong>—delivering
+                consistent, <strong>high-quality</strong> results for every
+                patient.
               </>
             }
-            buttonColor="bg-black"
-            buttonShadow="shadow-[0_10px_25px_rgba(0,0,0,0.25)]"
+            buttonColor="#000000"
           />
           <ProductCard
             title="U Aligner"
@@ -232,18 +277,18 @@ export default function HomePage() {
             description={
               <>
                 <strong>U-Aligner</strong> is designed to treat a wide range of
-                orthodontic cases, including <strong>spacing</strong>,{" "}
-                <strong>crowding</strong>, <strong>open bite</strong>,{" "}
-                <strong>crossbite</strong>, <strong>underbite</strong>, and{" "}
-                <strong>overbite</strong>. Backed by a skilled team of
-                specialists, we’ve helped patients of <strong>all ages</strong>,
-                from teens to kids to achieve <strong>confident</strong>,{" "}
-                <strong>healthy smiles</strong> with a clear path to a brighter
-                future.
+                orthodontic cases, including{" "}
+                <strong>
+                  spacing, crowding, open bite, crossbite, underbite, and
+                  overbite.
+                </strong>{" "}
+                Backed by a skilled team of specialists, we've helped patients of{" "}
+                <strong>all ages,</strong> from teens to kids to achieve{" "}
+                <strong>confident, healthy smiles</strong> with a clear path to a
+                brighter future.
               </>
             }
-            buttonColor="bg-[#f27128]"
-            buttonShadow="shadow-[0_10px_25px_rgba(242,113,40,0.35)]"
+            buttonColor="#F27128"
           />
           <ProductCard
             title="The Perio Max System"
@@ -253,18 +298,18 @@ export default function HomePage() {
             image="/images/who-we-are/periomaxset-items-card.png"
             description={
               <>
-                The Perio Max System offers an innovative approach to managing
-                gum health by delivering medication below and between the gums.
-                Using <strong>custom-fabricated trays</strong> and a specially
-                formulated <strong>homecare gel</strong>, this system is
-                designed to help reduce or prevent{" "}
-                <strong>gingivitis</strong> and <strong>periodontitis</strong>—
-                promoting healthier gums from the <strong>comfort of home</strong>.
+                <strong>The Perio Max System</strong> offers an innovative
+                approach to managing gum health by delivering medication below and
+                between the gums. Using{" "}
+                <strong>custom-fabricated trays</strong> and a specially
+                formulated <strong>homecare gel,</strong> this system is designed
+                to help reduce or prevent{" "}
+                <strong>gingivitis and periodontitis</strong>—promoting healthier
+                gums from the <strong>comfort of home.</strong>
               </>
             }
-            buttonColor="bg-[#1f0d6c]"
-            buttonShadow="shadow-[0_10px_25px_rgba(31,13,108,0.32)]"
-            imageClassName="max-h-[200px]"
+            buttonColor="#1F0D6C"
+            imageClassName="max-h-[266px]"
           />
         </div>
       </section>
