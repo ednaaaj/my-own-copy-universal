@@ -92,7 +92,7 @@ export function ProductCard({
 
           {/* Description */}
           <p
-            className="mt-[2px] mb-6 text-[18px] leading-[28px] text-black"
+            className="mt-[2px] mb-6 text-[18px] font-normal text-black"
             style={{ fontFamily: "Work Sans, sans-serif", fontWeight: 400 }}
           >
             {description}
