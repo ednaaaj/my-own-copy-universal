@@ -4,6 +4,7 @@ import { ProductCard } from "@/components/cards/product-card";
 import { OurProducts } from "@/components/sections/our-products";
 import { OurDigitalSolutions } from "@/components/sections/our-digital-solutions";
 import { ClientsSay } from "@/components/sections/clients-say";
+import { Footer } from "@/components/sections/footer";
 
 const navLinks = [
   { href: "#", label: "Home" },
@@ -282,7 +283,7 @@ export default function HomePage() {
                   spacing, crowding, open bite, crossbite, underbite, and
                   overbite.
                 </strong>{" "}
-                Backed by a skilled team of specialists, we've helped patients of{" "}
+                Backed by a skilled team of specialists, we&apos;ve helped patients of{" "}
                 <strong>all ages,</strong> from teens to kids to achieve{" "}
                 <strong>confident, healthy smiles</strong> with a clear path to a
                 brighter future.
@@ -317,6 +318,7 @@ export default function HomePage() {
       <OurProducts />
       <OurDigitalSolutions />
       <ClientsSay />
+      <Footer />
     </main>
   );
 }

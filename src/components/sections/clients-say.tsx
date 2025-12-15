@@ -21,7 +21,7 @@ const cards = [
 
 export function ClientsSay() {
   return (
-    <section className="relative overflow-hidden bg-white px-4 py-20 sm:px-6 sm:py-24 lg:px-10 lg:py-28">
+    <section className="relative overflow-hidden bg-white px-4 py-20 sm:px-6 sm:py-24 lg:px-10 lg:py-36">
       {/* Three gradient ellipses with gaps */}
       <div className="pointer-events-none absolute inset-0">
         {/* Left ellipse */}
