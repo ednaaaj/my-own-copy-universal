@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { ScrollSection } from "@/components/layout/scroll-section";
 
 const cards = [
   {
@@ -21,9 +22,9 @@ const cards = [
 
 export function ClientsSay() {
   return (
-    <section className="relative overflow-hidden bg-white px-4 py-20 sm:px-6 sm:py-24 lg:px-10 lg:py-36">
+    <ScrollSection className="relative overflow-hidden bg-white px-4 py-20 sm:px-6 sm:py-24 lg:px-10 lg:py-36" intensity={1.08}>
       {/* Three gradient ellipses with gaps */}
-      <div className="pointer-events-none absolute inset-0">
+      <div className="pointer-events-none absolute inset-0 parallax-layer" data-speed="slow">
         {/* Left ellipse */}
         <div
           className="absolute left-[calc(50%-700px)] top-[88px] h-[566px] w-[566px]"
@@ -124,6 +125,6 @@ export function ClientsSay() {
           ))}
         </div>
       </div>
-    </section>
+    </ScrollSection>
   );
 }

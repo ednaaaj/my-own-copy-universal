@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { ScrollSection } from "@/components/layout/scroll-section";
 
 const footerLinks = {
   about: ["Universal Orthodontic Lab", "CEO’s Greeting"],
@@ -23,8 +24,12 @@ const footerLinks = {
 export function Footer() {
   return (
     <footer className="bg-white">
-      <section className="relative mx-auto mt-48 mb-28 max-w-6xl overflow-visible rounded-[20px] bg-[rgba(6,140,255,0.08)] px-6 py-12 shadow-[0_16px_24px_rgba(6,140,255,0.12)] sm:px-10 lg:px-14">
-        <div className="pointer-events-none absolute inset-0">
+      <ScrollSection
+        as="section"
+        className="relative mx-auto mt-48 mb-28 max-w-6xl overflow-visible rounded-[20px] bg-[rgba(6,140,255,0.08)] px-6 py-12 shadow-[0_16px_24px_rgba(6,140,255,0.12)] sm:px-10 lg:px-14"
+        intensity={0.9}
+      >
+        <div className="pointer-events-none absolute inset-0 parallax-layer" data-speed="slow">
           <div className="absolute -left-24 -top-32 h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle_at_center,rgba(6,140,255,0.15)_0%,rgba(255,255,255,0)_70%)]" />
           <div className="absolute right-20 -top-44 h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle_at_center,rgba(6,140,255,0.12)_0%,rgba(255,255,255,0)_75%)]" />
         </div>
@@ -53,7 +58,7 @@ export function Footer() {
               </button>
             </form>
           </div>
-          <div className="pointer-events-none absolute -right-10 -top-32 h-[300px] w-[360px] sm:-right-14 sm:-top-40 sm:h-[340px] sm:w-[420px] lg:-right-20 lg:-top-48 lg:h-[400px] lg:w-[480px]">
+          <div className="pointer-events-none absolute -right-10 -top-32 h-[300px] w-[360px] sm:-right-14 sm:-top-40 sm:h-[340px] sm:w-[420px] lg:-right-20 lg:-top-48 lg:h-[400px] lg:w-[480px] parallax-layer" data-speed="slow">
             <Image
               src="/images/footer/footer-subsribe-teeth.png"
               alt="Clear aligner product"
@@ -62,9 +67,13 @@ export function Footer() {
             />
           </div>
         </div>
-      </section>
+      </ScrollSection>
 
-      <section className="mt-14 bg-[#068CFF] px-4 pb-10 pt-10 text-white sm:px-6 lg:px-10">
+      <ScrollSection
+        as="section"
+        className="mt-14 bg-[#068CFF] px-4 pb-10 pt-10 text-white sm:px-6 lg:px-10"
+        intensity={0.85}
+      >
         <div className="mx-auto flex max-w-6xl flex-col gap-8">
           <div className="grid gap-8 border-b border-white/60 pb-8 lg:grid-cols-[0.8fr,1.2fr]">
             <div className="flex items-start">
@@ -215,7 +224,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-      </section>
+      </ScrollSection>
     </footer>
   );
 }

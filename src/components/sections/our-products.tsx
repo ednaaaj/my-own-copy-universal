@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useMemo, useState } from "react";
+import { ScrollSection } from "@/components/layout/scroll-section";
 
 type ProductSlide = {
   id: string;
@@ -96,7 +97,7 @@ export function OurProducts() {
   };
 
   return (
-    <section className="relative bg-white px-4 py-16 sm:px-6 lg:px-10">
+    <ScrollSection className="relative bg-white px-4 py-16 sm:px-6 lg:px-10" intensity={1.05}>
       <div className="mx-auto max-w-6xl text-center">
         <h2 className="text-[36px] font-normal leading-[1.1] text-[#1f1f1f] sm:text-[40px]">
           Our Products
@@ -104,8 +105,8 @@ export function OurProducts() {
       </div>
 
       <div className="relative mx-auto mt-10 flex max-w-6xl flex-col items-center">
-        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-28 bg-gradient-to-r from-white via-white/80 to-white/0" />
-        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-28 bg-gradient-to-l from-white via-white/80 to-white/0" />
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-28 bg-gradient-to-r from-white via-white/80 to-white/0 parallax-layer" data-speed="slow" />
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-28 bg-gradient-to-l from-white via-white/80 to-white/0 parallax-layer" data-speed="slow" />
 
         <div className="relative flex h-[520px] w-full items-center justify-center overflow-visible">
           <div className="relative h-[520px] w-full">
@@ -203,6 +204,6 @@ export function OurProducts() {
           </button>
         </div>
       </div>
-    </section>
+    </ScrollSection>
   );
 }

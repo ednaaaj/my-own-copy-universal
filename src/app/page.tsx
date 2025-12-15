@@ -5,6 +5,7 @@ import { OurProducts } from "@/components/sections/our-products";
 import { OurDigitalSolutions } from "@/components/sections/our-digital-solutions";
 import { ClientsSay } from "@/components/sections/clients-say";
 import { Footer } from "@/components/sections/footer";
+import { ScrollSection } from "@/components/layout/scroll-section";
 
 const navLinks = [
   { href: "#", label: "Home" },
@@ -18,8 +19,11 @@ const navLinks = [
 export default function HomePage() {
   return (
     <main className="bg-white">
-      <section className="relative w-full overflow-hidden rounded-b-[110px] bg-white pb-0 shadow-sm border-b border-[#e6e6e6]">
-        <div className="absolute inset-0">
+      <ScrollSection
+        className="relative w-full overflow-hidden rounded-b-[110px] bg-white pb-0 shadow-sm border-b border-[#e6e6e6]"
+        intensity={0.85}
+      >
+        <div className="absolute inset-0 parallax-layer" data-speed="slow">
           <video
             className="h-full w-full object-cover"
             autoPlay
@@ -120,7 +124,8 @@ export default function HomePage() {
                 alt=""
                 width={56}
                 height={56}
-                className="absolute left-[12%] top-[28%] h-14 w-14 object-contain sm:left-[16%] sm:top-[26%]"
+                className="parallax-layer absolute left-[12%] top-[28%] h-14 w-14 object-contain sm:left-[16%] sm:top-[26%]"
+                data-speed="fast"
                 priority
               />
               <Image
@@ -128,7 +133,8 @@ export default function HomePage() {
                 alt=""
                 width={56}
                 height={56}
-                className="absolute right-[14%] top-[30%] h-14 w-14 object-contain sm:right-[18%] sm:top-[28%]"
+                className="parallax-layer absolute right-[14%] top-[30%] h-14 w-14 object-contain sm:right-[18%] sm:top-[28%]"
+                data-speed="fast"
                 priority
               />
               <Image
@@ -136,7 +142,8 @@ export default function HomePage() {
                 alt=""
                 width={56}
                 height={56}
-                className="absolute left-[8%] bottom-[8%] h-14 w-14 object-contain sm:left-[12%]"
+                className="parallax-layer absolute left-[8%] bottom-[8%] h-14 w-14 object-contain sm:left-[12%]"
+                data-speed="slow"
                 priority
               />
               <Image
@@ -144,15 +151,16 @@ export default function HomePage() {
                 alt=""
                 width={56}
                 height={56}
-                className="absolute right-[10%] bottom-[10%] h-14 w-14 object-contain sm:right-[14%]"
+                className="parallax-layer absolute right-[10%] bottom-[10%] h-14 w-14 object-contain sm:right-[14%]"
+                data-speed="slow"
                 priority
               />
             </div>
           </div>
         </div>
-      </section>
+      </ScrollSection>
 
-      <section className="relative overflow-hidden bg-white px-4 py-24 sm:py-28 lg:py-32">
+      <ScrollSection className="relative overflow-hidden bg-white px-4 py-24 sm:py-28 lg:py-32">
         <div className="pointer-events-none absolute left-[-10px] top-[52%] w-[280px] -translate-y-1/2 opacity-80 sm:left-[10px] sm:w-[320px] lg:left-[40px] lg:w-[360px]">
           <Image
             src="/images/who-we-are/left-object-floating.png"
@@ -194,11 +202,14 @@ export default function HomePage() {
             </span>
           </Link>
         </div>
-      </section>
+      </ScrollSection>
 
-      <section className="relative overflow-hidden bg-white px-4 pb-24 pt-10 sm:pb-28 sm:pt-12 lg:pb-32 lg:pt-16">
+      <ScrollSection className="relative overflow-hidden bg-white px-4 pb-24 pt-10 sm:pb-28 sm:pt-12 lg:pb-32 lg:pt-16">
         {/* Background gradient ellipses - closer together with overlap */}
-        <div className="pointer-events-none absolute inset-0">
+        <div
+          className="pointer-events-none absolute inset-0 parallax-layer"
+          data-speed="slow"
+        >
           {/* Left bottom ellipse */}
           <div
             className="absolute left-[80px] top-[180px] h-[520px] w-[520px]"
@@ -313,7 +324,7 @@ export default function HomePage() {
             imageClassName="max-h-[266px]"
           />
         </div>
-      </section>
+      </ScrollSection>
 
       <OurProducts />
       <OurDigitalSolutions />

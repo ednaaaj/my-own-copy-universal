@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { ScrollSection } from "@/components/layout/scroll-section";
 
 type SolutionItem = {
   id: string;
@@ -42,7 +43,7 @@ const solutions: SolutionItem[] = [
 
 export function OurDigitalSolutions() {
   return (
-    <section className="relative bg-white px-4 py-16 sm:px-6 lg:px-10">
+    <ScrollSection className="relative bg-white px-4 py-16 sm:px-6 lg:px-10" intensity={1.1}>
       <div className="mx-auto mb-25 flex max-w-5xl items-center justify-between">
         <h2 className="text-[40px] font-normal leading-[1] text-[#1f1f1f] sm:text-[44px]">
           Our Digital Solutions
@@ -52,7 +53,8 @@ export function OurDigitalSolutions() {
           alt=""
           width={72}
           height={72}
-          className="h-18 w-18"
+          className="h-18 w-18 parallax-layer"
+          data-speed="fast"
         />
       </div>
       <div className="mx-auto mt-4 h-[1px] max-w-5xl bg-black" />
@@ -62,7 +64,7 @@ export function OurDigitalSolutions() {
           <div key={solution.id} className="space-y-4">
             <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
               <div className="space-y-10 mt-20">
-                <div className="relative h-[100px]">
+                <div className="relative h-[100px] parallax-layer" data-speed="slow">
                   <Image
                     src={solution.watermark}
                     alt=""
@@ -102,6 +104,6 @@ export function OurDigitalSolutions() {
           </div>
         ))}
       </div>
-    </section>
+    </ScrollSection>
   );
 }
