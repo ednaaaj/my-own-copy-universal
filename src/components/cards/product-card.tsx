@@ -61,7 +61,7 @@ export function ProductCard({
           <div className="flex flex-col gap-[18px]">
             <div className="flex items-center gap-2">
               <Image
-                src="/images/who-we-are/black-diamon-logo.png"
+                src="/images/main/who-we-are/black-diamon-logo.png"
                 alt=""
                 width={12}
                 height={12}

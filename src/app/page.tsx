@@ -8,8 +8,8 @@ import { Footer } from "@/components/sections/footer";
 import { ScrollSection } from "@/components/layout/scroll-section";
 
 const navLinks = [
-  { href: "#", label: "Home" },
-  { href: "#", label: "Support" },
+  { href: "/", label: "Home" },
+  { href: "/support", label: "Support" },
   { href: "#", label: "Digital Solutions" },
   { href: "#", label: "Appliances" },
   { href: "#", label: "Laser Sintered Appliances" },
@@ -30,7 +30,7 @@ export default function HomePage() {
             muted
             loop
             playsInline
-            src="/images/hero/hero-bg-video.mp4"
+            src="/images/main/hero/hero-bg-video.mp4"
           />
           <div className="absolute inset-0 bg-white/78 mix-blend-lighten" />
           <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/88" />
@@ -41,7 +41,7 @@ export default function HomePage() {
             <div className="flex w-full max-w-[1686px] items-center gap-6 overflow-hidden rounded-[60px] border border-white/60 bg-white/90 px-6 py-3 shadow-[0_6px_9px_4px_rgba(76,76,76,0.2)] backdrop-blur">
               <Link href="/" className="flex-shrink-0">
                 <Image
-                  src="/images/navbar/Universal-logo-navbar.png"
+                  src="/images/main/navbar/Universal-logo-navbar.png"
                   alt="Universal Orthodontic Lab"
                   width={330}
                   height={99}
@@ -71,7 +71,7 @@ export default function HomePage() {
                 >
                   <span className="pointer-events-none absolute inset-[1px] rounded-full bg-gradient-to-b from-white/35 to-white/10" />
                   <Image
-                    src="/images/navbar/ualigner-logo.png"
+                    src="/images/main/navbar/ualigner-logo.png"
                     alt="Aligner Portal"
                     width={26}
                     height={25}
@@ -112,7 +112,7 @@ export default function HomePage() {
           <div className="relative mx-auto mt-8 max-w-6xl">
             <div className="relative flex justify-center -mb-20 sm:-mb-24 lg:-mb-28">
               <Image
-                src="/images/hero/hero-teeth-center.png"
+                src="/images/main/hero/hero-teeth-center.png"
                 alt="Dental appliances"
                 width={1056}
                 height={730}
@@ -120,7 +120,7 @@ export default function HomePage() {
                 priority
               />
               <Image
-                src="/images/hero/hero-top-left-plus-blue-icon.png"
+                src="/images/main/hero/hero-top-left-plus-blue-icon.png"
                 alt=""
                 width={56}
                 height={56}
@@ -129,7 +129,7 @@ export default function HomePage() {
                 priority
               />
               <Image
-                src="/images/hero/hero-top-right-blue-icon.png"
+                src="/images/main/hero/hero-top-right-blue-icon.png"
                 alt=""
                 width={56}
                 height={56}
@@ -138,7 +138,7 @@ export default function HomePage() {
                 priority
               />
               <Image
-                src="/images/hero/hero-bottom-left-blue-icon.png"
+                src="/images/main/hero/hero-bottom-left-blue-icon.png"
                 alt=""
                 width={56}
                 height={56}
@@ -147,7 +147,7 @@ export default function HomePage() {
                 priority
               />
               <Image
-                src="/images/hero/hero-bottom-right-blue-icon.png"
+                src="/images/main/hero/hero-bottom-right-blue-icon.png"
                 alt=""
                 width={56}
                 height={56}
@@ -163,7 +163,7 @@ export default function HomePage() {
       <ScrollSection className="relative overflow-hidden bg-white px-4 py-24 sm:py-28 lg:py-32">
         <div className="pointer-events-none absolute left-[-10px] top-[52%] w-[280px] -translate-y-1/2 opacity-80 sm:left-[10px] sm:w-[320px] lg:left-[40px] lg:w-[360px]">
           <Image
-            src="/images/who-we-are/left-object-floating.png"
+            src="/images/main/who-we-are/left-object-floating.png"
             alt=""
             width={436}
             height={512}
@@ -172,7 +172,7 @@ export default function HomePage() {
         </div>
         <div className="pointer-events-none absolute right-[-10px] top-[52%] w-[280px] -translate-y-1/2 opacity-80 sm:right-[10px] sm:w-[320px] lg:right-[40px] lg:w-[360px]">
           <Image
-            src="/images/who-we-are/right-object-floating.png"
+            src="/images/main/who-we-are/right-object-floating.png"
             alt=""
             width={436}
             height={512}
@@ -265,8 +265,8 @@ export default function HomePage() {
             title="Metal Worx"
             subtitle="Laser Sintered"
             accent="#000000"
-            logo="/images/who-we-are/metal-worx-logo.png"
-            image="/images/who-we-are/metal-worx-teeth-card.png"
+            logo="/images/main/who-we-are/metal-worx-logo.png"
+            image="/images/main/who-we-are/metal-worx-teeth-card.png"
             description={
               <>
                 <strong>Metal Worx</strong> represents the next generation of
@@ -284,8 +284,8 @@ export default function HomePage() {
             title="U Aligner"
             subtitle="Clear Solutions for Every Smile"
             accent="#F27128"
-            logo="/images/who-we-are/aligner-logo.png"
-            image="/images/who-we-are/aligner-teeth-logo-card.png"
+            logo="/images/main/who-we-are/aligner-logo.png"
+            image="/images/main/who-we-are/aligner-teeth-logo-card.png"
             description={
               <>
                 <strong>U-Aligner</strong> is designed to treat a wide range of
@@ -306,8 +306,8 @@ export default function HomePage() {
             title="The Perio Max System"
             subtitle="Targeted Gum Health at Home"
             accent="#1F0D6C"
-            logo="/images/who-we-are/perio-max-logo.png"
-            image="/images/who-we-are/periomaxset-items-card.png"
+            logo="/images/main/who-we-are/perio-max-logo.png"
+            image="/images/main/who-we-are/periomaxset-items-card.png"
             description={
               <>
                 <strong>The Perio Max System</strong> offers an innovative

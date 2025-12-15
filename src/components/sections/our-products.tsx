@@ -20,8 +20,8 @@ const slides: ProductSlide[] = [
     title: "Herbst Telescopic",
     description:
       "A tray is formed with dual hard Biocryl and soft silicone trays.",
-    image: "/images/our-products/our-products-active-applience.png",
-    background: "/images/our-products/our-products-active-appliance-bg-gray.svg",
+    image: "/images/main/our-products/our-products-active-applience.png",
+    background: "/images/main/our-products/our-products-active-appliance-bg-gray.svg",
   },
   {
     id: "functional",
@@ -29,9 +29,9 @@ const slides: ProductSlide[] = [
     title: "M.A.R.A.",
     description:
       "A tray is formed with dual hard Biocryl and soft silicone trays.",
-    image: "/images/our-products/our-products-functional-appliance.png",
+    image: "/images/main/our-products/our-products-functional-appliance.png",
     background:
-      "/images/our-products/our-products-functional-appliance-bg-gray.svg",
+      "/images/main/our-products/our-products-functional-appliance-bg-gray.svg",
   },
   {
     id: "space",
@@ -39,8 +39,8 @@ const slides: ProductSlide[] = [
     title: "Space Management",
     description:
       "A tray is formed with dual hard Biocryl and soft silicone trays.",
-    image: "/images/our-products/our-products-space-maintainer.png",
-    background: "/images/our-products/our-products-space-maintainer-bg-gray.svg",
+    image: "/images/main/our-products/our-products-space-maintainer.png",
+    background: "/images/main/our-products/our-products-space-maintainer-bg-gray.svg",
   },
   {
     id: "active-2",
@@ -48,8 +48,8 @@ const slides: ProductSlide[] = [
     title: "Herbst Telescopic",
     description:
       "A tray is formed with dual hard Biocryl and soft silicone trays.",
-    image: "/images/our-products/our-products-active-applience.png",
-    background: "/images/our-products/our-products-active-appliance-bg-gray.svg",
+    image: "/images/main/our-products/our-products-active-applience.png",
+    background: "/images/main/our-products/our-products-active-appliance-bg-gray.svg",
   },
   {
     id: "space-2",
@@ -57,8 +57,8 @@ const slides: ProductSlide[] = [
     title: "Space Management",
     description:
       "A tray is formed with dual hard Biocryl and soft silicone trays.",
-    image: "/images/our-products/our-products-space-maintainer.png",
-    background: "/images/our-products/our-products-space-maintainer-bg-gray.svg",
+    image: "/images/main/our-products/our-products-space-maintainer.png",
+    background: "/images/main/our-products/our-products-space-maintainer-bg-gray.svg",
   },
 ];
 
@@ -168,7 +168,7 @@ export function OurProducts() {
             aria-label="Previous"
           >
             <Image
-              src="/images/our-products/our-products-left-chevron.svg"
+              src="/images/main/our-products/our-products-left-chevron.svg"
               alt="Previous"
               width={15}
               height={29}
@@ -195,7 +195,7 @@ export function OurProducts() {
             aria-label="Next"
           >
             <Image
-              src="/images/our-products/our-products-right-chevron.svg"
+              src="/images/main/our-products/our-products-right-chevron.svg"
               alt="Next"
               width={15}
               height={29}
