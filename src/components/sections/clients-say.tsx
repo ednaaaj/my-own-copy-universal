@@ -97,7 +97,7 @@ export function ClientsSay() {
                   {/* Avatar with white background circle */}
                   <div className="relative flex h-[48.91px] w-[48.91px] flex-shrink-0 items-center justify-center rounded-full bg-white">
                     <Image
-                      src="/images/what-client-say/what-client-say-blue-person.png"
+                      src="/images/main/what-client-say/what-client-say-blue-person.png"
                       alt=""
                       width={49}
                       height={49}

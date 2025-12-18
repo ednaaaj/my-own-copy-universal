@@ -18,8 +18,8 @@ const solutions: SolutionItem[] = [
     title: "Digital Planning",
     description:
       "Partnering with you in utilizing the latest technological advancements. Technology has proven to be reliable and efficient in making orthodontic appliances with more consistent results.",
-    image: "/images/our-digital-solution/our-digital-solution-digital-planning.png",
-    watermark: "/images/our-digital-solution/our-digital-01.png",
+    image: "/images/main/our-digital-solution/our-digital-solution-digital-planning.png",
+    watermark: "/images/main/our-digital-solution/our-digital-01.png",
   },
   {
     id: "stl-printing",
@@ -27,8 +27,8 @@ const solutions: SolutionItem[] = [
     title: "STL File 3D Printing",
     description: "",
     image:
-      "/images/our-digital-solution/our-digital-solutions-stl-file-3d-printing.png",
-    watermark: "/images/our-digital-solution/our-digital-02.png",
+      "/images/main/our-digital-solution/our-digital-solutions-stl-file-3d-printing.png",
+    watermark: "/images/main/our-digital-solution/our-digital-02.png",
   },
   {
     id: "digital-prescription",
@@ -36,8 +36,8 @@ const solutions: SolutionItem[] = [
     title: "Digital Prescription",
     description: "",
     image:
-      "/images/our-digital-solution/our-digital-solutions-digital-prescription.png",
-    watermark: "/images/our-digital-solution/our-digital-03.png",
+      "/images/main/our-digital-solution/our-digital-solutions-digital-prescription.png",
+    watermark: "/images/main/our-digital-solution/our-digital-03.png",
   },
 ];
 
@@ -49,7 +49,7 @@ export function OurDigitalSolutions() {
           Our Digital Solutions
         </h2>
         <Image
-          src="/images/our-digital-solution/our-digital-solution-star.svg"
+          src="/images/main/our-digital-solution/our-digital-solution-star.svg"
           alt=""
           width={72}
           height={72}

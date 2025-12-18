@@ -60,7 +60,7 @@ export function Footer() {
           </div>
           <div className="pointer-events-none absolute -right-10 -top-32 h-[300px] w-[360px] sm:-right-14 sm:-top-40 sm:h-[340px] sm:w-[420px] lg:-right-20 lg:-top-48 lg:h-[400px] lg:w-[480px] parallax-layer" data-speed="slow">
             <Image
-              src="/images/footer/footer-subsribe-teeth.png"
+              src="/images/main/footer/footer-subsribe-teeth.png"
               alt="Clear aligner product"
               fill
               className="object-contain"
@@ -78,7 +78,7 @@ export function Footer() {
           <div className="grid gap-8 border-b border-white/60 pb-8 lg:grid-cols-[0.8fr,1.2fr]">
             <div className="flex items-start">
               <Image
-                src="/images/footer/footer-logo.png"
+                src="/images/main/footer/footer-logo.png"
                 alt="Universal Orthodontic Lab"
                 width={444}
                 height={126}
