@@ -11,6 +11,7 @@ import { DocumentCard } from "@/components/cards/DocumentCard";
 import { SearchInput } from "@/components/ui/SearchInput";
 import { Accordion, AccordionItem } from "@/components/ui/Accordion";
 import { FilterPills } from "@/components/ui/FilterPills";
+import { Footer } from "@/components/sections/footer";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -751,6 +752,63 @@ export default function SupportPage() {
         </div>
       </ScrollSection>
 
+      <ScrollSection className="bg-white px-4 pb-24 pt-16 sm:px-8 sm:pt-20 lg:px-12 lg:pb-28">
+        <div className="mx-auto flex max-w-[1320px] flex-col gap-12">
+          {/* Header */}
+          <div className="flex flex-col gap-6">
+            <div className="flex items-center gap-3">
+              <Image
+                src="/images/support-page/become-a-customer/become-a-customer-black-diamon.png"
+                alt=""
+                width={20}
+                height={20}
+                className="h-[18px] w-[18px] object-contain opacity-80"
+              />
+              <span className="font-karla text-[20px] font-medium uppercase leading-[20px] text-black/80">
+                Regulatory and Compliance
+              </span>
+            </div>
+            <div className="h-[1px] w-full bg-[#D9DEDD]" />
+          </div>
+
+          <div className="flex flex-col items-center justify-between gap-12 lg:flex-row">
+            {/* Left Content */}
+            <div className="flex flex-col gap-10 max-w-[734px]">
+              <h2 className="font-roboto text-[42px] font-normal leading-tight text-black sm:text-[52px] lg:text-[64px] lg:leading-[75px] tracking-[0.02em]">
+                Ensuring Quality, Safety, and Adherence to Industry Standards in Every Step of Our Process.
+              </h2>
+              <p className="font-work-sans text-[18px] font-normal leading-[30px] text-[#272727]">
+                Committed to Meeting All Regulatory and Compliance Standards.
+              </p>
+            </div>
+
+            {/* Right Content - Certificate */}
+            <div className="relative">
+              <div className="overflow-hidden rounded-[13px] border border-gray-100 shadow-[0_24px_24px_-12px_rgba(54,74,54,0.06)]">
+                 <Image
+                  src="/images/support-page/regulatory-and-compliance/certificate.png"
+                  alt="ISO 13485:2016 Certificate"
+                  width={508}
+                  height={694}
+                  className="h-auto w-full max-w-[508px] object-contain"
+                />
+              </div>
+               {/* Search/Zoom Icon Overlay */}
+              <div className="absolute bottom-6 right-6 flex h-[58px] w-[58px] items-center justify-center rounded-[8px] bg-[rgba(43,52,238,0.51)] backdrop-blur-sm cursor-pointer transition hover:bg-[rgba(43,52,238,0.7)]">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
+                  <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" />
+                  <path d="M20 20L16 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  {/* Plus inside magnifier */}
+                  <path d="M11 8V14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  <path d="M8 11H14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ScrollSection>
+
+      <Footer />
     </main>
   );
 }
