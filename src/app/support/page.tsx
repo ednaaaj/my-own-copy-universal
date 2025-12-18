@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Navbar } from "@/components/layout/Navbar";
 import { useState } from "react";
 import { ScrollSection } from "@/components/layout/scroll-section";
 import { TextField } from "@/components/ui/TextField";
@@ -11,16 +12,11 @@ import { DocumentCard } from "@/components/cards/DocumentCard";
 import { SearchInput } from "@/components/ui/SearchInput";
 import { Accordion, AccordionItem } from "@/components/ui/Accordion";
 import { FilterPills } from "@/components/ui/FilterPills";
-import { Footer } from "@/components/sections/footer";
 
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/support", label: "Support" },
-  { href: "#", label: "Digital Solutions" },
-  { href: "#", label: "Appliances" },
-  { href: "#", label: "Laser Sintered Appliances" },
-  { href: "#", label: "Marpe" },
-];
+import { Footer } from "@/components/sections/footer";
+import { BecomeCustomerSection } from "@/components/sections/BecomeCustomerSection";
+
+
 
 const stars = Array.from({ length: 5 });
 
@@ -175,67 +171,8 @@ export default function SupportPage() {
         </div>
 
         <div className="relative z-10 px-4 pb-16 pt-8 sm:px-8 lg:px-12 min-h-[576px] flex flex-col">
-          <header className="flex justify-center">
-            <div className="flex w-full max-w-[1686px] items-center gap-6 overflow-hidden rounded-[60px] border border-white/60 bg-white/90 px-6 py-3 shadow-[0_6px_9px_4px_rgba(76,76,76,0.2)] backdrop-blur">
-              <Link href="/" className="flex-shrink-0">
-                <Image
-                  src="/images/main/navbar/Universal-logo-navbar.png"
-                  alt="Universal Orthodontic Lab"
-                  width={330}
-                  height={99}
-                  className="h-[72px] w-auto object-contain"
-                  priority
-                />
-              </Link>
-              <nav className="hidden flex-1 items-center justify-center gap-6 lg:flex">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    className="text-[14px] font-medium uppercase tracking-[0.02em] text-black/40 transition hover:text-black"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </nav>
-              <div className="ml-auto flex items-center gap-3">
-                <Link
-                  href="#"
-                  className="relative flex items-center gap-2 overflow-hidden rounded-full px-5 py-2.5 text-[14px] font-semibold uppercase tracking-[0.02em] text-white shadow-[0_8px_20px_rgba(255,110,30,0.4)] ring-1 ring-[#ffb347]/60 transition hover:brightness-105"
-                  style={{
-                    background:
-                      "linear-gradient(120deg, #ff3c00 0%, #ff7a1a 45%, #ffb73c 100%)",
-                  }}
-                >
-                  <span className="pointer-events-none absolute inset-[1px] rounded-full bg-gradient-to-b from-white/35 to-white/10" />
-                  <Image
-                    src="/images/main/navbar/ualigner-logo.png"
-                    alt="Aligner Portal"
-                    width={26}
-                    height={25}
-                    className="h-[20px] w-[20px] object-contain"
-                  />
-                  <span className="relative z-10 text-white">Aligner Portal</span>
-                  <span className="relative z-10 -mb-[2px] text-lg leading-none text-white">
-                    →
-                  </span>
-                </Link>
-                <Link
-                  href="#"
-                  className="relative flex items-center gap-2 overflow-hidden rounded-full px-5 py-2.5 text-[14px] font-semibold uppercase tracking-[0.02em] text-white shadow-[0_8px_20px_rgba(6,140,255,0.35)] ring-1 ring-[#4db8ff]/60 transition hover:brightness-105"
-                  style={{
-                    background:
-                      "linear-gradient(130deg, #0b1c8b 0%, #1f63d1 45%, #2bc5ff 100%)",
-                  }}
-                >
-                  <span className="pointer-events-none absolute inset-[1px] rounded-full bg-gradient-to-b from-white/35 to-white/10" />
-                  <span className="relative z-10 text-white">Rio Portal</span>
-                  <span className="relative z-10 -mb-[2px] text-lg leading-none text-white">
-                    →
-                  </span>
-                </Link>
-              </div>
-            </div>
+          <header className="flex justify-center absolute top-[31px] left-0 w-full z-50">
+             <Navbar />
           </header>
 
           <div className="mx-auto flex min-h-[420px] max-w-6xl flex-col items-center justify-center gap-6 px-3 pt-10 pb-4 text-center sm:min-h-[500px] sm:pt-14 lg:min-h-[540px] lg:pt-20">
@@ -296,196 +233,7 @@ export default function SupportPage() {
           </div>
 
           <div className="overflow-x-auto">
-            <div className="mx-auto flex min-w-[1150px] max-w-[1320px] flex-row items-start justify-between gap-10">
-              <div className="flex w-[460px] shrink-0 flex-col gap-6">
-                <div className="space-y-3">
-                  <h2 className="font-display text-[42px] font-normal leading-[1.05] text-[#111] sm:text-[52px] lg:text-[64px]">
-                    New Customer Questionnaire
-                  </h2>
-                  <p className="max-w-2xl text-[18px] leading-[30px] text-[#272727]">
-                    Please fill out the form. Once you submit the form, our friendly
-                    representative will give you a follow up call.
-                  </p>
-                </div>
-
-                <div className="relative overflow-hidden rounded-[20px] bg-black shadow-[0_16px_28px_rgba(0,0,0,0.14)]">
-                  <Image
-                    src="/images/support-page/become-a-customer/become-a-customer-doctor.png"
-                    alt="Smiling dentist"
-                    width={500}
-                    height={900}
-                    className="h-full w-full object-cover"
-                    priority
-                    quality={100}
-                  />
-                  <div className="absolute inset-0 bg-transparent" />
-                  <div className="absolute inset-0 flex flex-col justify-end gap-4 p-6 text-white sm:p-7">
-                    <div className="flex items-center gap-2">
-                      {stars.map((_, idx) => (
-                        <Image
-                          key={idx}
-                          src="/images/support-page/become-a-customer/become-a-customer-star.png"
-                          alt=""
-                          width={32}
-                          height={32}
-                          className="h-8 w-8 object-contain"
-                        />
-                      ))}
-                    </div>
-                    <p className="text-[28px] leading-[36px] font-normal sm:text-[30px] sm:leading-[40px]">
-                      &quot;Universal Orthodontic Lab delivers reliable, high-quality
-                      appliances with seamless service and modern precision.&quot;
-                    </p>
-                    <div className="text-[16px] leading-[22px] font-semibold sm:text-[18px] sm:leading-[24px]">
-                      JANE DOE
-                      <span className="block text-white/80 font-medium">
-                        Orthodontist
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <form
-                onSubmit={handleSubmit}
-                className="flex min-w-[640px] max-w-[720px] flex-1 flex-col gap-6 rounded-[20px] bg-[#f0f0f0] px-6 py-7 shadow-[0_16px_24px_rgba(0,0,0,0.06)]"
-              >
-                <h2 className="font-display text-[42px] font-normal leading-[1.05] text-[#111] sm:text-[48px] lg:text-[52px]">
-                  Become a Customer
-                </h2>
-
-                <div className="grid gap-4 lg:grid-cols-2">
-                  <TextField
-                    label="Customer Name / Office *"
-                    name="customerName"
-                    placeholder="Customer Name / Office"
-                    required
-                  />
-                </div>
-
-                <div className="grid gap-4 lg:grid-cols-2">
-                  <TextField
-                    label="Address 1 *"
-                    name="address1"
-                    placeholder="Address 1"
-                    required
-                  />
-                  <TextField label="Address 2" name="address2" placeholder="Address 2" />
-                </div>
-
-                <div className="grid gap-4 lg:grid-cols-2">
-                  <TextField
-                    label="City / State / Zip Code *"
-                    name="cityStateZip"
-                    placeholder="City / State / Zip"
-                    required
-                  />
-                  <div className="grid grid-cols-[0.95fr,1.05fr] gap-3">
-                    <SelectField
-                      label="Country"
-                      name="country"
-                      options={["USA", "Canada", "Mexico", "Other"]}
-                      defaultValue="USA"
-                    />
-                    <TextField
-                      label="Phone *"
-                      name="phone"
-                      placeholder="Phone"
-                      required
-                      type="tel"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid gap-4 lg:grid-cols-2">
-                  <TextField label="Fax" name="fax" placeholder="Fax" />
-                  <TextField
-                    label="E-Mail *"
-                    name="email"
-                    placeholder="E-Mail"
-                    type="email"
-                    required
-                  />
-                </div>
-
-                <div className="pt-1 text-[20px] font-medium uppercase tracking-[0.04em] text-black/80">
-                  Additional questions
-                </div>
-
-                <div className="grid gap-4 lg:grid-cols-2">
-                  <SelectField
-                    label="How did you hear about Universal Orthodontic Lab? *"
-                    name="hearAbout"
-                    options={fields.hearAbout}
-                    placeholder="Answer"
-                    required
-                  />
-                  <SelectField
-                    label="Which field do you specialize in? (Select one) *"
-                    name="specialty"
-                    options={fields.specialties}
-                    placeholder="Orthodontics"
-                    required
-                  />
-                </div>
-
-                <div className="grid gap-4 lg:grid-cols-2">
-                  <TextField
-                    label="How many practices do you have?"
-                    name="practices"
-                    placeholder="Answer"
-                    type="number"
-                    min={0}
-                  />
-                  <TextField
-                    label="Which lab do you currently work with?"
-                    name="currentLab"
-                    placeholder="Your current lab"
-                  />
-                </div>
-
-                <div className="grid gap-4 lg:grid-cols-2">
-                  <SelectField
-                    label="Would you like a copy of our catalog and/or Starter Kit?"
-                    name="catalog"
-                    options={fields.catalog}
-                    placeholder="Catalog"
-                  />
-                  <TextAreaField
-                    label="Comments"
-                    name="comments"
-                    placeholder="Comments"
-                  />
-                </div>
-
-                <div className="grid gap-3">
-                  <TextField
-                    label="Please prove that you are human by solving the equation *"
-                    name="humanCheck"
-                    placeholder="2 + 2 = ?"
-                    required
-                  />
-                </div>
-
-                <div className="flex items-center justify-end gap-3">
-                  {submitted ? (
-                    <span
-                      className="text-sm font-medium text-green-700"
-                      role="status"
-                      aria-live="polite"
-                    >
-                      Thanks! We&apos;ll reach out shortly.
-                    </span>
-                  ) : null}
-                  <button
-                    type="submit"
-                    className="mt-2 inline-flex h-[50px] items-center justify-center rounded-full bg-[#068cff] px-6 text-[15px] font-semibold text-white shadow-[0_10px_18px_rgba(6,140,255,0.25)] transition hover:brightness-110"
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </form>
-            </div>
+            <BecomeCustomerSection />
           </div>
         </div>
       </ScrollSection>
