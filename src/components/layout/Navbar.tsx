@@ -21,8 +21,8 @@ const navLinks = [
     label: "Appliances",
     dropdown: [
       { label: "All Appliances", href: "#" },
-      { label: "Perio Max+", href: "#" },
-      { label: "U Aligner", href: "#" },
+      { label: "Perio Max+", href: "/appliances/perio-max" },
+      { label: "U Aligner", href: "/aligner" },
     ],
   },
   { href: "#", label: "Laser Sintered Appliances" },
