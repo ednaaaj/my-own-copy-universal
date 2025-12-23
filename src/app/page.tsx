@@ -35,11 +35,11 @@ export default function HomePage() {
              <Navbar />
           </header>
 
-          <div className="mx-auto flex max-w-6xl flex-col items-center px-3 pt-16 text-center sm:pt-20">
-            <p className="font-display text-[42px] font-normal tracking-[0.02em] text-[#313131] sm:text-[56px] lg:text-[70px] xl:text-[90px] xl:leading-[117px]">
+          <div className="mx-auto flex max-w-6xl flex-col items-center px-10 pt-44 text-center sm:pt-48 lg:pt-52 gap-6 sm:gap-8 xl:gap-12">
+            <p className="font-display text-[42px] font-normal tracking-[0.02em] text-[#313131] sm:text-[56px] lg:text-[70px] xl:text-[90px] xl:leading-[117px] mb-8 sm:mb-10 lg:mb-12 xl:mb-16">
               The New Standard In
             </p>
-            <h1 className="font-display text-[64px] font-medium uppercase tracking-[0.02em] text-[#313131] sm:text-[82px] lg:text-[94px] xl:text-[100px] xl:leading-[70px]">
+            <h1 className="font-display text-[64px] font-medium uppercase tracking-[0.02em] text-[#313131] sm:text-[82px] lg:text-[100px] xl:text-[100px] xl:leading-[70px]">
               Dental Lab Solutions
             </h1>
           </div>
