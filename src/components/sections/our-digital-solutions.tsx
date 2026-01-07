@@ -5,6 +5,7 @@ import { ScrollSection } from "@/components/layout/scroll-section";
 
 type SolutionItem = {
   id: string;
+  number: string;
   title: string;
   description: string;
   image: string;
@@ -62,8 +63,8 @@ export function OurDigitalSolutions() {
       <div className="relative mx-auto mt-10 flex max-w-5xl flex-col gap-12">
         {solutions.map((solution, idx) => (
           <div key={solution.id} className="space-y-4">
-            <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
-              <div className="space-y-10 mt-20">
+            <div className="flex flex-col lg:grid lg:gap-10 lg:grid-cols-2 lg:items-start">
+              <div className="space-y-6 sm:space-y-10 mt-10 sm:mt-20">
                 <div className="relative h-[100px] parallax-layer" data-speed="slow">
                   <Image
                     src={solution.watermark}
@@ -80,12 +81,12 @@ export function OurDigitalSolutions() {
                   {solution.description}
                 </p>
               </div>
-              <div className="flex justify-end">
+              <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
                 <div
-                  className="overflow-hidden rounded-[16px] bg-[#f0f0f0] shadow-[0_8px_16px_rgba(0,0,0,0.12)]"
+                  className={`overflow-hidden rounded-[16px] bg-[#f0f0f0] shadow-[0_8px_16px_rgba(0,0,0,0.12)] w-full`}
                   style={{
-                    width: solution.id === "digital-planning" ? "703px" : "450px",
-                    height: solution.id === "digital-planning" ? "360px" : "245px",
+                    maxWidth: solution.id === "digital-planning" ? "703px" : "450px",
+                    aspectRatio: solution.id === "digital-planning" ? "703/360" : "450/245",
                   }}
                 >
                   <Image

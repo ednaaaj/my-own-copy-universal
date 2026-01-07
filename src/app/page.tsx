@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <main className="bg-white">
       <ScrollSection
-        className="relative w-full overflow-hidden rounded-b-[110px] bg-white pb-0 shadow-sm border-b border-[#e6e6e6]"
+        className="relative w-full overflow-hidden rounded-b-[36px] sm:rounded-b-[60px] lg:rounded-b-[110px] bg-white pb-0 shadow-sm border-b border-[#e6e6e6]"
         intensity={0.85}
       >
         <div className="absolute inset-0 parallax-layer" data-speed="slow">
@@ -35,13 +35,14 @@ export default function HomePage() {
              <Navbar />
           </header>
 
-          <div className="mx-auto flex max-w-6xl flex-col items-center px-10 pt-44 text-center sm:pt-48 lg:pt-52 gap-6 sm:gap-8 xl:gap-12">
-            <p className="font-display text-[42px] font-normal tracking-[0.02em] text-[#313131] sm:text-[56px] lg:text-[70px] xl:text-[90px] xl:leading-[117px] mb-8 sm:mb-10 lg:mb-12 xl:mb-16">
+          <div className="mx-auto flex max-w-6xl flex-col items-center px-4 sm:px-10 pt-32 sm:pt-44 lg:pt-52 text-center gap-2 sm:gap-4">
+            <p className="font-display text-[24px] sm:text-[42px] lg:text-[70px] xl:text-[90px] font-normal tracking-[0.02em] text-[#313131] leading-[28px] sm:leading-normal xl:leading-[117px] mb-2 sm:mb-8 lg:mb-12 xl:mb-16">
               The New Standard In
             </p>
-            <h1 className="font-display text-[64px] font-medium uppercase tracking-[0.02em] text-[#313131] sm:text-[82px] lg:text-[100px] xl:text-[100px] xl:leading-[70px]">
-              Dental Lab Solutions
+            <h1 className="font-display text-[29px] sm:text-[64px] lg:text-[100px] font-medium uppercase tracking-[0.02em] text-[#313131] leading-[70px] sm:leading-normal xl:leading-[70px]">
+              Dental Lab
             </h1>
+            <h1 className="font-display text-[29px] sm:text-[64px] lg:text-[100px] font-medium uppercase tracking-[0.02em] text-[#313131] leading-[70px] sm:leading-normal xl:leading-[70px]">Solutions</h1>
           </div>
 
           <div className="relative mx-auto mt-8 max-w-6xl">
@@ -59,7 +60,7 @@ export default function HomePage() {
                 alt=""
                 width={56}
                 height={56}
-                className="parallax-layer absolute left-[12%] top-[28%] h-14 w-14 object-contain sm:left-[16%] sm:top-[26%]"
+                className="parallax-layer absolute left-[5%] top-[28%] h-8 w-8 sm:h-14 sm:w-14 object-contain sm:left-[16%] sm:top-[26%]"
                 data-speed="fast"
                 priority
               />
@@ -68,7 +69,7 @@ export default function HomePage() {
                 alt=""
                 width={56}
                 height={56}
-                className="parallax-layer absolute right-[14%] top-[30%] h-14 w-14 object-contain sm:right-[18%] sm:top-[28%]"
+                className="parallax-layer absolute right-[5%] top-[30%] h-8 w-8 sm:h-14 sm:w-14 object-contain sm:right-[18%] sm:top-[28%]"
                 data-speed="fast"
                 priority
               />
@@ -77,7 +78,7 @@ export default function HomePage() {
                 alt=""
                 width={56}
                 height={56}
-                className="parallax-layer absolute left-[8%] bottom-[8%] h-14 w-14 object-contain sm:left-[12%]"
+                className="parallax-layer absolute left-[2%] bottom-[8%] h-6 w-6 sm:h-14 sm:w-14 object-contain sm:left-[12%]"
                 data-speed="slow"
                 priority
               />
@@ -86,7 +87,7 @@ export default function HomePage() {
                 alt=""
                 width={56}
                 height={56}
-                className="parallax-layer absolute right-[10%] bottom-[10%] h-14 w-14 object-contain sm:right-[14%]"
+                className="parallax-layer absolute right-[2%] bottom-[10%] h-6 w-6 sm:h-14 sm:w-14 object-contain sm:right-[14%]"
                 data-speed="slow"
                 priority
               />
@@ -95,8 +96,8 @@ export default function HomePage() {
         </div>
       </ScrollSection>
 
-      <ScrollSection className="relative overflow-hidden bg-white px-4 py-24 sm:py-28 lg:py-32">
-        <div className="pointer-events-none absolute left-[-10px] top-[52%] w-[280px] -translate-y-1/2 opacity-80 sm:left-[10px] sm:w-[320px] lg:left-[40px] lg:w-[360px]">
+      <ScrollSection className="relative overflow-hidden bg-white px-4 py-16 sm:py-24 lg:py-32">
+        <div className="pointer-events-none absolute left-[-10px] top-[52%] w-[180px] -translate-y-1/2 opacity-60 hidden sm:block sm:w-[280px] lg:left-[40px] lg:w-[360px]">
           <Image
             src="/images/main/who-we-are/left-object-floating.png"
             alt=""
@@ -105,7 +106,7 @@ export default function HomePage() {
             className="h-auto w-full object-contain"
           />
         </div>
-        <div className="pointer-events-none absolute right-[-10px] top-[52%] w-[280px] -translate-y-1/2 opacity-80 sm:right-[10px] sm:w-[320px] lg:right-[40px] lg:w-[360px]">
+        <div className="pointer-events-none absolute right-[-10px] top-[52%] w-[180px] -translate-y-1/2 opacity-60 hidden sm:block sm:w-[280px] lg:right-[40px] lg:w-[360px]">
           <Image
             src="/images/main/who-we-are/right-object-floating.png"
             alt=""
@@ -114,11 +115,11 @@ export default function HomePage() {
             className="h-auto w-full object-contain"
           />
         </div>
-        <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-6 text-center">
-          <p className="font-karla text-[20px] font-medium uppercase leading-[20px] text-black">
+        <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-4 sm:gap-6 text-center px-2 sm:px-0">
+          <p className="font-karla text-[18px] sm:text-[20px] font-medium uppercase leading-[20px] text-black">
             Who We Are
           </p>
-          <p className="font-display text-[20px] font-normal leading-[32px] tracking-[0.5px] text-[#1f1f1f] sm:text-[20px]">
+          <p className="font-display text-[16px] sm:text-[20px] font-normal leading-[30px] tracking-[0.5px] text-[#1f1f1f]">
             Based in Southern California, Universal Orthodontic Lab is a
             full-service, custom orthodontic laboratory with decades of
             experience. Since 1985, we&apos;ve been dedicated to producing
@@ -195,7 +196,7 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="relative mx-auto flex max-w-[1326px] flex-wrap items-start justify-center gap-[31px]">
+        <div className="relative mx-auto flex max-w-[1326px] flex-col lg:flex-row flex-wrap items-center lg:items-start justify-center gap-6 lg:gap-[31px] px-4 sm:px-6">
           <ProductCard
             title="Metal Worx"
             subtitle="Laser Sintered"
