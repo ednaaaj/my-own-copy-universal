@@ -24,23 +24,23 @@ export function ProductCard({
   imageClassName,
 }: ProductCardProps) {
   return (
-    <article className="flex w-full max-w-[400px] flex-col">
+    <article className="flex w-full max-w-full sm:max-w-[400px] flex-col">
       {/* Card container */}
       <div className="flex flex-col">
         {/* Top section - Logo */}
-        <div className="flex h-[54px] items-center rounded-t-[15px] bg-white/80 px-[30px] shadow-[0_16px_16px_-8px_rgba(12,12,13,0.1),0_4px_4px_-4px_rgba(12,12,13,0.05)]">
+        <div className="flex h-[54px] items-center rounded-t-[15px] bg-white/80 px-4 sm:px-[30px] shadow-[0_16px_16px_-8px_rgba(12,12,13,0.1),0_4px_4px_-4px_rgba(12,12,13,0.05)]">
           <Image
             src={logo}
             alt={title}
             width={290}
             height={35}
-            className="h-auto max-h-[35px] w-auto max-w-[290px] object-contain"
+            className="h-auto max-h-[35px] w-auto max-w-full object-contain"
           />
         </div>
 
         {/* Middle section - Product Image */}
         <div
-          className="mt-[6px] flex h-[400px] w-full items-center justify-center shadow-[0_16px_16px_-8px_rgba(12,12,13,0.1),0_4px_4px_-4px_rgba(12,12,13,0.05)]"
+          className="mt-[6px] flex h-[300px] sm:h-[400px] w-full items-center justify-center shadow-[0_16px_16px_-8px_rgba(12,12,13,0.1),0_4px_4px_-4px_rgba(12,12,13,0.05)]"
           style={{
             background:
               "radial-gradient(circle at center, rgba(6, 140, 255, 0.12) 0%, rgba(255, 255, 255, 0.8) 65%)",
@@ -51,12 +51,12 @@ export function ProductCard({
             alt={title}
             width={371}
             height={300}
-            className={`h-auto max-h-[300px] w-auto max-w-[371px] object-contain ${imageClassName ?? ""}`}
+            className={`h-auto max-h-[220px] sm:max-h-[300px] w-auto max-w-[85%] sm:max-w-[371px] object-contain ${imageClassName ?? ""}`}
           />
         </div>
 
         {/* Bottom section - Description */}
-        <div className="mt-[6px] flex h-[460px] flex-col rounded-b-[20px] bg-white/80 px-[30px] pb-[24px] pt-[22px] shadow-[0_16px_16px_-8px_rgba(12,12,13,0.1),0_4px_4px_-4px_rgba(12,12,13,0.05)]">
+        <div className="mt-[6px] flex min-h-[380px] sm:h-[460px] flex-col rounded-b-[20px] bg-white/80 px-5 sm:px-[30px] pb-[24px] pt-[22px] shadow-[0_16px_16px_-8px_rgba(12,12,13,0.1),0_4px_4px_-4px_rgba(12,12,13,0.05)]">
           {/* Subtitle with icon and colored line */}
           <div className="flex flex-col gap-[18px]">
             <div className="flex items-center gap-2">

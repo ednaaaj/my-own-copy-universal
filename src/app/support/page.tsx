@@ -82,7 +82,7 @@ const faqItems: AccordionItem[] = [
     question: "What is the Universal Digital Prescription?",
     answer: (
       <>
-         Universal Orthodontic Lab provides Digital Prescription Application. It is web base application to submit, manage, and track all your orthodontic lab prescriptions and it is to create patient appliances. Feel free to contact us at <a href="tel:877-771-0770" className="text-[#068cff] underline">877-771-0770</a> or click here for more information.
+        Universal Digital Prescription (UNIVERSAL RX) is software to submit, manage, and track all your orthodontic lab prescriptions and it is to create patient appliance, aligner, and indirect bonding prescriptions.
       </>
     ),
   },
@@ -90,49 +90,121 @@ const faqItems: AccordionItem[] = [
     id: "stl-file",
     category: "Digital Case",
     question: "What is a STL file?",
-    answer: "STL is a file format native to the stereolithography CAD software created by 3D Systems.",
+    answer: "STL file is a general file format used in manufacturing. This file type is used for scanning applications in the dental and orthodontic industry.",
   },
   {
     id: "locations",
-    category: "Account",
+    category: "Digital Case",
     question: "Can I receive my case at different locations?",
-    answer: "Yes, we can ship cases to different locations. Please ensure the address is provided clearly on the prescription or contact our support team.",
+    answer: "You can fill the address where you want to receive on lab slip. If you are using Universal Web Application, you are able to register multiple locations and simply choose one when you submit your case.",
   },
   {
     id: "send-digital",
     category: "Digital Case",
     question: "How can I send you a digital case?",
-    answer: "You can send digital cases through our Rio Portal or by uploading STL files directly via our website.",
+    answer: (
+      <>
+        You can easily send your STL file to Universal Orthodontic Lab. You can submit your STL file with digital Rx sheet by using the <a href="#" className="text-[#068cff] underline">UNIVERSAL RX Application</a>. Or simply upload your STL files on our <a href="#" className="text-[#068cff] underline">STL Cloud Service</a>.
+      </>
+    ),
   },
   {
     id: "prescription-sheet",
     category: "General",
     question: "Where can I get your prescription sheet?",
-    answer: "You can download our prescription sheets from the Document Center on this page.",
+    answer: (
+      <>
+        There are two ways to get Rx sheets. One way is to download Rx sheets on our website. You will find the downloadable Rx sheets on &apos;Downloadable Forms&apos; page under Support tab. Another way is to request pre-printed rx sheets by calling our customer support team at <a href="tel:877-771-0770" className="text-[#068cff] underline">877-771-0770</a>. Or you can submit digital Rx sheet by using the <a href="#" className="text-[#068cff] underline">UNIVERSAL RX Application</a>.
+      </>
+    ),
   },
   {
     id: "shipping-boxes",
     category: "General",
     question: "Do you provide shipping boxes and label?",
-    answer: "Yes, we provide shipping boxes and labels at no cost. Please contact us to request supplies.",
+    answer: (
+      <>
+        Yes, we provide packaging and shipping materials to you at no cost. To request supplies, please call customer service team at <a href="tel:877-771-0770" className="text-[#068cff] underline">877-771-0770</a> or complete printable PDF form on our web page. PDF form will be found on &apos;Downloadable Forms&apos; page under Support tab.
+      </>
+    ),
   },
   {
     id: "price-lists",
-    category: "Account",
+    category: "General",
     question: "Do you have price lists?",
-    answer: "Yes, please contact us to request our current price list.",
+    answer: "Yes, we do, the price list is provided by our customer support team via e-mail or fax. Please contact our friendly customer service staff for further assistance.",
   },
   {
     id: "product-list",
-    category: "Appliance",
+    category: "General",
     question: "Do you have product list?",
-    answer: "Yes, our full product list is available in the catalog which you can request via the Become a Customer form.",
+    answer: (
+      <>
+        Yes, we do have. Downloadable PDF Catalog can be found on our website for your convenience. Please download at &apos;Download Forms&apos; page under Support tab or <a href="#" className="text-[#068cff] underline">click here to be redirected to the download page</a>.
+      </>
+    ),
   },
   {
     id: "customized-appliance",
     category: "Appliance",
     question: "Do you provide customized appliance?",
-    answer: "Yes, Universal Orthodontic Lab, Inc. is a full-service custom orthodontic laboratory. We offer several types of active and passive retainer designs. We take pride in the quality of our wire bending and acrylic finishing. We offer a full selection of acrylic colors and designs. Please be sure to reference our Color Guide and the Acrylic Decal Designs when ordering retainers. We look forward to receiving a case from your practice.",
+    answer: (
+      <>
+        At Universal Orthodontic Lab, we understand the need of the customized appliances, our professional technicians will be able to customize any appliance for your patient needs. Please contact our customer support team for evaluation at <a href="tel:877-771-0770" className="text-[#068cff] underline">877-771-0770</a>.
+      </>
+    ),
+  },
+  {
+    id: "where-is-case",
+    category: "Account",
+    question: "Where is my case?",
+    answer: (
+      <>
+        We ship the majority of our cases back to our customers via FEDEX. You can call our customer support team at <a href="tel:877-771-0770" className="text-[#068cff] underline">877-771-0770</a> and we will track your case.
+      </>
+    ),
+  },
+  {
+    id: "invoice-statement",
+    category: "Account",
+    question: "Should I pay by invoice or statement?",
+    answer: "Either method is acceptable; however, most of our customers prefer to pay by the monthly statement.",
+  },
+  {
+    id: "broken-appliance",
+    category: "Appliance",
+    question: "My appliance is broken",
+    answer: (
+      <>
+        At Universal Orthodontic Lab, we understand how difficult is losing or breaking the retainer could it be. We provide reasonable price for repair to our customers. Our professional technicians will be able to help you. Please contact our customer support team for evaluation at <a href="tel:877-771-0770" className="text-[#068cff] underline">877-771-0770</a>.
+      </>
+    ),
+  },
+  {
+    id: "wrong-appliance",
+    category: "Appliance",
+    question: "I received a wrong appliance.",
+    answer: (
+      <>
+        At Universal Orthodontic Lab, we understand how hard receiving wrong appliances could be. We provide prompt solutions and reasonable adjustments in the worst scenario. Our Customer Service Department will be able to answer any questions and prompt respond for an emergency case scenario. Please contact our Customer Service Department at <a href="tel:877-771-0770" className="text-[#068cff] underline">877-771-0770</a>.
+      </>
+    ),
+  },
+  {
+    id: "warranty",
+    category: "Appliance",
+    question: "Do you have appliance warranty program?",
+    answer: "We back all of our appliances for 60 days, please contact our customer support team for any questions related to warranty policy.",
+  },
+  {
+    id: "payment-methods",
+    category: "Account",
+    question: "What payment methods do you accept?",
+    answer: (
+      <>
+        We accept Visa, Mastercard, checks and money orders. Please make sure checks payable to Universal Orthodontic Lab when you send us checks. If you prefer, we can set up your account so that your credit card is automatically charged at the beginning of each month with the amount due on your statement. Please call our customer service department at <a href="tel:877-771-0770" className="text-[#068cff] underline">877-771-0770</a> for more detail information.
+      </>
+    ),
   },
 ];
 

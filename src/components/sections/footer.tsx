@@ -26,24 +26,35 @@ export function Footer() {
     <footer className="bg-white">
       <ScrollSection
         as="section"
-        className="relative mx-auto mt-48 mb-28 max-w-6xl overflow-visible rounded-[20px] bg-[rgba(6,140,255,0.08)] px-6 py-12 shadow-[0_16px_24px_rgba(6,140,255,0.12)] sm:px-10 lg:px-14"
+        className="relative mx-4 sm:mx-auto mt-24 sm:mt-48 mb-16 sm:mb-28 max-w-6xl overflow-visible rounded-[20px] bg-[rgba(6,140,255,0.08)] px-4 sm:px-10 lg:px-14 py-8 sm:py-12 shadow-[0_16px_24px_rgba(6,140,255,0.12)]"
         intensity={0.9}
       >
-        <div className="pointer-events-none absolute inset-0 parallax-layer" data-speed="slow">
+        <div className="pointer-events-none absolute inset-0 parallax-layer hidden sm:block" data-speed="slow">
           <div className="absolute -left-24 -top-32 h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle_at_center,rgba(6,140,255,0.15)_0%,rgba(255,255,255,0)_70%)]" />
           <div className="absolute right-20 -top-44 h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle_at_center,rgba(6,140,255,0.12)_0%,rgba(255,255,255,0)_75%)]" />
         </div>
 
-        <div className="relative grid items-center gap-8 lg:grid-cols-[1.1fr,0.9fr]">
-          <div className="space-y-3 text-[#068CFF]">
-            <h3 className="text-[32px] font-bold leading-[1.2] sm:text-[40px]">
+        {/* Mobile: Teeth image above content */}
+        <div className="relative sm:hidden flex justify-center -mt-16 mb-4">
+          <Image
+            src="/images/main/footer/footer-subsribe-teeth.png"
+            alt="Clear aligner product"
+            width={200}
+            height={150}
+            className="object-contain"
+          />
+        </div>
+
+        <div className="relative flex flex-col lg:grid lg:grid-cols-[1.1fr,0.9fr] items-center gap-6 lg:gap-8">
+          <div className="space-y-3 text-[#068CFF] text-center sm:text-left">
+            <h3 className="text-[28px] sm:text-[32px] lg:text-[40px] font-bold leading-[1.2]">
               Subscribe to our newsletter
             </h3>
-            <p className="max-w-xl text-[16px] leading-[24px]">
+            <p className="max-w-xl text-[14px] sm:text-[16px] leading-[22px] sm:leading-[24px]">
               Sign up for our newsletter and be the first one to see our latest
               news, and get exclusive discounts and promotions!
             </p>
-            <form className="mt-4 flex w-full max-w-xl items-center gap-3 rounded-full bg-[rgba(255,255,255,0.9)] px-2 py-2 shadow-[0_10px_18px_rgba(6,140,255,0.18)] backdrop-blur">
+            <form className="mt-4 flex flex-col sm:flex-row w-full max-w-xl items-stretch sm:items-center gap-3 rounded-[20px] sm:rounded-full bg-[rgba(255,255,255,0.9)] px-3 sm:px-2 py-3 sm:py-2 shadow-[0_10px_18px_rgba(6,140,255,0.18)] backdrop-blur">
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -51,14 +62,15 @@ export function Footer() {
               />
               <button
                 type="submit"
-                className="flex h-12 items-center gap-2 rounded-full bg-[#068CFF] px-5 text-[14px] font-semibold uppercase tracking-[0.5px] text-white shadow-[0_10px_18px_rgba(6,140,255,0.35)] transition hover:brightness-110"
+                className="flex h-12 items-center justify-center gap-2 rounded-full bg-[#068CFF] px-5 text-[14px] font-semibold uppercase tracking-[0.5px] text-white shadow-[0_10px_18px_rgba(6,140,255,0.35)] transition hover:brightness-110"
               >
                 Subscribe
                 <span className="-mb-[1px] text-lg leading-none">→</span>
               </button>
             </form>
           </div>
-          <div className="pointer-events-none absolute -right-10 -top-32 h-[300px] w-[360px] sm:-right-14 sm:-top-40 sm:h-[340px] sm:w-[420px] lg:-right-20 lg:-top-48 lg:h-[400px] lg:w-[480px] parallax-layer" data-speed="slow">
+          {/* Desktop: Teeth image positioned absolute */}
+          <div className="pointer-events-none absolute hidden sm:block -right-14 -top-40 h-[340px] w-[420px] lg:-right-20 lg:-top-48 lg:h-[400px] lg:w-[480px] parallax-layer" data-speed="slow">
             <Image
               src="/images/main/footer/footer-subsribe-teeth.png"
               alt="Clear aligner product"

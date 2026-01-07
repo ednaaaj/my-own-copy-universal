@@ -63,14 +63,14 @@ export function ClientsSay() {
           {cards.map((card, index) => (
             <div
               key={card.name}
-              className="flex w-full max-w-[420px] flex-col sm:w-[420px]"
+              className="flex w-full max-w-full sm:max-w-[420px] flex-col"
             >
               {/* Top card - Quote section */}
-              <div className="flex h-[214px] flex-col rounded-t-[20px] bg-[rgba(240,240,240,0.5)] px-[25px] pb-4 pt-[27px] shadow-[0_16px_16px_-8px_rgba(12,12,13,0.1),0_4px_4px_-4px_rgba(12,12,13,0.05)]">
+              <div className="flex min-h-[200px] sm:h-[214px] flex-col rounded-t-[20px] bg-[rgba(240,240,240,0.5)] px-[20px] sm:px-[25px] pb-4 pt-[20px] sm:pt-[27px] shadow-[0_16px_16px_-8px_rgba(12,12,13,0.1),0_4px_4px_-4px_rgba(12,12,13,0.05)]">
                 <div className="relative">
                   {/* Large quote mark */}
                   <p
-                    className="mb-2 flex items-end text-[96px] leading-[26px] text-[#068CFF]"
+                    className="mb-2 flex items-end text-[72px] sm:text-[96px] leading-[26px] text-[#068CFF]"
                     style={{ fontFamily: "Karla, sans-serif" }}
                   >
                     &ldquo;
@@ -90,7 +90,7 @@ export function ClientsSay() {
 
               {/* Bottom card - Author section */}
               <div
-                className="mt-[4px] flex h-[82px] items-center rounded-b-[20px] px-[25px] py-4 shadow-[0_16px_16px_-8px_rgba(12,12,13,0.1),0_4px_4px_-4px_rgba(12,12,13,0.05)]"
+                className="mt-[4px] flex h-[82px] items-center rounded-b-[20px] px-[20px] sm:px-[25px] py-4 shadow-[0_16px_16px_-8px_rgba(12,12,13,0.1),0_4px_4px_-4px_rgba(12,12,13,0.05)]"
                 style={{ background: card.gradient }}
               >
                 <div className="flex items-center gap-[15px]">
