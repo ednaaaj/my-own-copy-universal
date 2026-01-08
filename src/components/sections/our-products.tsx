@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useCallback } from "react";
 import { ScrollSection } from "@/components/layout/scroll-section";
 
 type ProductSlide = {
@@ -64,7 +64,21 @@ const slides: ProductSlide[] = [
 
 export function OurProducts() {
   const [index, setIndex] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(1200);
   const total = slides.length;
+
+  // Calculate dynamic spacing and card size based on viewport
+  const getDynamicValues = useCallback(() => {
+    // For full-width spread: we want 5 cards visible, with outer cards partially visible at edges
+    // Spacing = viewport width / 5 (to fit ~5 cards)
+    const spacing = Math.min(windowWidth / 4.5, 400); // Max spacing of 400px
+    const cardWidth = Math.min(Math.max(windowWidth * 0.22, 260), 380); // 22% of viewport, min 260, max 380
+    const cardHeight = cardWidth * 1.42; // Maintain aspect ratio
+
+    return { spacing, cardWidth, cardHeight };
+  }, [windowWidth]);
+
+  const { spacing, cardWidth, cardHeight } = getDynamicValues();
 
   const orderedSlides = useMemo(() => {
     return slides.map((slide, idx) => {
@@ -99,39 +113,49 @@ export function OurProducts() {
       };
     }
 
-    // Desktop: original multi-card behavior
+    // Desktop: 5-card layout spreading across full width
     if (abs > 2) {
       return {
         opacity: 0,
-        transform: "translateX(0) scale(0.8)",
+        transform: `translateX(${distance * spacing}px) scale(0.7)`,
         zIndex: 0,
-        filter: "blur(10px)",
+        filter: "blur(8px)",
         pointerEvents: "none" as const,
       };
     }
-    const spacing = 360;
-    const scale = distance === 0 ? 1.05 : abs === 1 ? 0.95 : 0.85;
-    const opacity = distance === 0 ? 1 : abs === 1 ? 1 : 0.7;
-    const blur = abs <= 1 ? 0 : 6;
+
+    // Scale: center=1, adjacent=0.92, outer=0.85
+    const scale = distance === 0 ? 1 : abs === 1 ? 0.92 : 0.85;
+
+    // Opacity: center=1, adjacent=1, outer=0.6
+    const opacity = abs <= 1 ? 1 : 0.6;
+
+    // Blur: center & adjacent = 0, outer cards = 8px
+    const blur = abs <= 1 ? 0 : 8;
+
+    // Z-index: center highest
+    const zIndex = distance === 0 ? 30 : abs === 1 ? 20 : 10;
 
     return {
       transform: `translateX(${distance * spacing}px) scale(${scale})`,
       opacity,
-      zIndex: distance === 0 ? 30 : abs === 1 ? 20 : 10,
+      zIndex,
       filter: `blur(${blur}px)`,
       pointerEvents: abs <= 2 ? ("auto" as const) : ("none" as const),
     };
   };
 
-  // Check if mobile (will be false on server, true on client if < 640px)
+  // Check screen size
   const [isMobile, setIsMobile] = useState(false);
 
-  // useEffect to detect mobile on client side
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 640);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      setIsMobile(window.innerWidth < 640);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const goToPrev = () => {
@@ -147,30 +171,37 @@ export function OurProducts() {
   };
 
   return (
-    <ScrollSection className="relative bg-white px-4 py-16 sm:px-6 lg:px-10" intensity={1.05}>
-      <div className="mx-auto max-w-6xl text-center">
+    <ScrollSection className="relative bg-white py-16" intensity={1.05}>
+      <div className="text-center mb-10">
         <h2 className="text-[32px] sm:text-[36px] lg:text-[40px] font-normal leading-[1.1] text-[#1f1f1f]">
           Our Products
         </h2>
       </div>
 
-      <div className="relative mx-auto mt-10 flex max-w-6xl flex-col items-center px-4 sm:px-6">
-        {/* Side fade gradients */}
-        <div className="pointer-events-none absolute left-0 top-0 z-40 h-full w-8 sm:w-32 bg-gradient-to-r from-white via-white/90 to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 z-40 h-full w-8 sm:w-32 bg-gradient-to-l from-white via-white/90 to-transparent" />
-
-        <div className="relative flex h-[450px] sm:h-[520px] w-full items-center justify-center overflow-visible">
-          <div className="relative h-[450px] sm:h-[520px] w-full">
+      {/* Full-width carousel container */}
+      <div className="relative w-full overflow-hidden">
+        <div
+          className="relative flex items-center justify-center"
+          style={{ height: `${cardHeight + 40}px` }}
+        >
+          <div
+            className="relative w-full"
+            style={{ height: `${cardHeight + 40}px` }}
+          >
             {orderedSlides.map(({ slide, distance, originalIndex }) => (
               <div
                 key={slide.id + originalIndex}
-                className="absolute left-1/2 top-1/2 h-[420px] w-[280px] sm:h-[480px] sm:w-[340px] -translate-x-1/2 -translate-y-1/2 rounded-[20px] bg-[#f0f0f0] shadow-[0_16px_16px_-8px_rgba(12,12,13,0.1),0_4px_4px_-4px_rgba(12,12,13,0.05)] ring-1 ring-white/60 transition-all duration-500 ease-out cursor-pointer"
-                style={slideStyle(distance, isMobile)}
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[20px] bg-[#f0f0f0] shadow-[0_16px_16px_-8px_rgba(12,12,13,0.1),0_4px_4px_-4px_rgba(12,12,13,0.05)] ring-1 ring-white/60 transition-all duration-500 ease-out cursor-pointer will-change-transform"
+                style={{
+                  width: `${cardWidth}px`,
+                  height: `${cardHeight}px`,
+                  ...slideStyle(distance, isMobile),
+                }}
                 onClick={() => goToSlide(originalIndex)}
               >
                 <div className="relative h-full overflow-hidden rounded-[20px] bg-[#f0f0f0]">
                   <div
-                    className="h-[40px] w-full text-center text-[16px] font-semibold uppercase tracking-[0.12em] text-white"
+                    className="h-[40px] w-full text-center text-[14px] sm:text-[16px] font-semibold uppercase tracking-[0.12em] text-white"
                     style={{
                       background:
                         "linear-gradient(180deg, #43a6ff 0%, #0f7fe7 60%, #0b72d4 100%)",
@@ -181,15 +212,18 @@ export function OurProducts() {
                     </div>
                   </div>
                   <div
-                    className="flex flex-1 flex-col items-center px-5 pb-5 pt-5 text-center"
+                    className="flex flex-1 flex-col items-center px-4 sm:px-5 pb-4 sm:pb-5 pt-4 sm:pt-5 text-center"
                     style={{
                       backgroundImage: `url(${slide.background})`,
                       backgroundRepeat: "no-repeat",
                       backgroundPosition: "center",
-                      backgroundSize: "300px 300px",
+                      backgroundSize: `${cardWidth * 0.85}px ${cardWidth * 0.85}px`,
                     }}
                   >
-                    <div className="relative h-[200px] w-full">
+                    <div
+                      className="relative w-full"
+                      style={{ height: `${cardHeight * 0.4}px` }}
+                    >
                       <Image
                         src={slide.image}
                         alt={slide.title}
@@ -197,11 +231,11 @@ export function OurProducts() {
                         className="object-contain"
                       />
                     </div>
-                    <div className="mt-5 space-y-2">
-                      <h3 className="text-[20px] font-semibold uppercase tracking-tight text-[#000]">
+                    <div className="mt-4 sm:mt-5 space-y-2">
+                      <h3 className="text-[16px] sm:text-[20px] font-semibold uppercase tracking-tight text-[#000]">
                         {slide.title}
                       </h3>
-                      <p className="text-[16px] font-normal leading-[22px] text-[#000]">
+                      <p className="text-[14px] sm:text-[16px] font-normal leading-[20px] sm:leading-[22px] text-[#000]">
                         {slide.description}
                       </p>
                     </div>
@@ -229,7 +263,7 @@ export function OurProducts() {
             />
           </button>
 
-          {/* Dot indicators - show current position */}
+          {/* Dot indicators */}
           <div className="flex items-center gap-2">
             {slides.map((slide, idx) => (
               <button

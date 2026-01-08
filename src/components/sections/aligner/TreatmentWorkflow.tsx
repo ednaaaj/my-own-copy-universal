@@ -37,7 +37,7 @@ const steps = [
 
 export function TreatmentWorkflow() {
   return (
-    <section className="relative py-20 overflow-hidden bg-white">
+    <section className="relative py-12 sm:py-16 lg:py-20 overflow-hidden bg-white">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12 flex flex-col items-center">
         {/* Header */}
         <motion.div
@@ -45,12 +45,12 @@ export function TreatmentWorkflow() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-20"
+            className="text-center mb-10 sm:mb-16 lg:mb-20"
         >
-            <h2 className="font-roboto font-normal text-[48px] sm:text-[64px] leading-[1.2] text-black mb-8 tracking-[0.02em]">
+            <h2 className="font-roboto font-normal text-[32px] sm:text-[48px] lg:text-[64px] leading-[1.2] text-black mb-4 sm:mb-6 lg:mb-8 tracking-[0.02em]">
             Treatment Workflow
             </h2>
-            <p className="font-work-sans font-normal text-[16px] sm:text-[18px] leading-[30px] text-[#272727] max-w-[1100px] mx-auto">
+            <p className="font-work-sans font-normal text-[14px] sm:text-[16px] lg:text-[18px] leading-[24px] sm:leading-[30px] text-[#272727] max-w-[1100px] mx-auto px-2">
             U-Aligner can treat a wide variety of cases and malocclusions including
             spacing, crowding, open bite, crossbite, underbite, and overbite. Our
             trained team of specialists have treated patients of all ages including

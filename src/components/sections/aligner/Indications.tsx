@@ -44,7 +44,7 @@ const conditions = [
 
 export function Indications() {
   return (
-    <section className="relative py-20 bg-white">
+    <section className="relative py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12 flex flex-col items-center">
         {/* Header */}
         <motion.h2
@@ -52,7 +52,7 @@ export function Indications() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-roboto font-normal text-[48px] sm:text-[64px] leading-[1.2] text-center text-black mb-20 tracking-[0.02em]"
+            className="font-roboto font-normal text-[32px] sm:text-[48px] lg:text-[64px] leading-[1.2] text-center text-black mb-10 sm:mb-14 lg:mb-20 tracking-[0.02em]"
         >
           Indications
         </motion.h2>

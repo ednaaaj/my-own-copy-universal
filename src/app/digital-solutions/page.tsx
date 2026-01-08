@@ -54,7 +54,7 @@ export default function DigitalSolutionsPage() {
     <main className="bg-white">
       {/* Hero Section */}
       <ScrollSection
-        className="relative w-full overflow-hidden rounded-b-[110px] bg-white pb-0 shadow-sm border-b border-[#e6e6e6]"
+        className="relative w-full overflow-hidden rounded-b-[36px] sm:rounded-b-[60px] lg:rounded-b-[110px] bg-white pb-0 shadow-sm border-b border-[#e6e6e6]"
         intensity={0.85}
       >
         <div className="absolute inset-0">
@@ -68,16 +68,16 @@ export default function DigitalSolutionsPage() {
            <div className="absolute inset-0 bg-[#F1F1F1] opacity-60" />
         </div>
 
-        <div className="relative z-10 px-4 pb-0 pt-8 sm:px-8 lg:px-12 h-[576px] flex flex-col">
+        <div className="relative z-10 px-4 pb-0 pt-8 sm:px-8 lg:px-12 min-h-[400px] sm:min-h-[500px] lg:min-h-[576px] flex flex-col">
           <header className="flex justify-center absolute top-[31px] left-0 w-full z-50">
              <Navbar />
           </header>
 
-          <div className="flex flex-1 flex-col items-center justify-center text-center">
-            <h1 className="font-roboto text-[64px] font-normal leading-[75px] tracking-[0.02em] text-black sm:text-[80px] lg:text-[100px]">
+          <div className="flex flex-1 flex-col items-center justify-center text-center px-2 pt-16 sm:pt-20">
+            <h1 className="font-roboto text-[32px] sm:text-[48px] md:text-[64px] lg:text-[80px] xl:text-[100px] font-normal leading-[1.15] tracking-[0.02em] text-black">
               Digital Solutions
             </h1>
-            <p className="mt-6 max-w-[900px] font-work-sans text-[18px] font-normal leading-[30px] text-[#272727] sm:text-[20px]">
+            <p className="mt-4 sm:mt-6 max-w-[900px] font-work-sans text-[14px] sm:text-[16px] lg:text-[18px] xl:text-[20px] font-normal leading-[24px] sm:leading-[30px] text-[#272727] px-2">
               At Universal Orthodontic Lab, we are committed to helping practices embrace the future of orthodontics with advanced digital workflows and streamlined solutions. Whether you&apos;re fully digital or just getting started, our team is here to support your journey.
             </p>
           </div>
@@ -85,10 +85,10 @@ export default function DigitalSolutionsPage() {
       </ScrollSection>
 
       {/* Seamless Integration Section */}
-      <ScrollSection className="bg-white py-24 sm:py-32">
+      <ScrollSection className="bg-white py-12 sm:py-20 lg:py-24 xl:py-32">
         <div className="mx-auto flex max-w-[1320px] flex-col-reverse gap-10 lg:flex-row lg:items-center px-6">
           <div className="flex flex-1 flex-col gap-8">
-            <h2 className="font-roboto text-[50px] leading-[1.1] text-black lg:text-[64px]">
+            <h2 className="font-roboto text-[28px] sm:text-[36px] md:text-[50px] lg:text-[64px] leading-[1.1] text-black">
               Seamless Integration with Shining 3D
             </h2>
             <p className="font-work-sans text-[18px] leading-[30px] text-[#272727]">
@@ -126,23 +126,23 @@ export default function DigitalSolutionsPage() {
       </ScrollSection>
 
       {/* Our Process Section */}
-      <ScrollSection className="bg-white py-20">
-        <div className="mx-auto max-w-[1600px] px-6 text-center">
-          <h2 className="font-roboto text-[48px] text-black sm:text-[64px]">
+      <ScrollSection className="bg-white py-12 sm:py-16 lg:py-20">
+        <div className="mx-auto max-w-[1600px] px-4 sm:px-6 text-center">
+          <h2 className="font-roboto text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] text-black">
             Our Process: Simple & Efficient
           </h2>
           <p className="mt-4 font-work-sans text-[18px] text-[#272727]">
             Going digital with Universal is easy. Here&apos;s how the process works:
           </p>
 
-          <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-8 sm:mt-12 lg:mt-16 grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {processSteps.map((step, idx) => (
               <div key={idx} className="flex flex-col items-start gap-8 rounded-[12px] bg-[#F0F0F0] p-6 text-left h-full">
                 <div className="relative h-20 w-20 shrink-0">
                   <Image src={step.icon} alt={step.title} fill className="object-contain" />
                 </div>
                 <div className="flex flex-col gap-4 flex-1">
-                  <h3 className="font-roboto text-[28px] leading-tight text-black lg:text-[32px]">
+                  <h3 className="font-roboto text-[20px] sm:text-[24px] lg:text-[28px] xl:text-[32px] leading-tight text-black">
                     {step.title}
                   </h3>
                    <div className="h-[1px] w-[120px] bg-black" />
@@ -157,9 +157,9 @@ export default function DigitalSolutionsPage() {
       </ScrollSection>
 
       {/* Accepted Scans Section */}
-      <ScrollSection className="bg-white py-20">
-        <div className="mx-auto flex max-w-[1320px] flex-col items-center gap-16 px-6">
-          <h2 className="text-center font-roboto text-[42px] font-normal leading-tight text-black sm:text-[64px]">
+      <ScrollSection className="bg-white py-12 sm:py-16 lg:py-20">
+        <div className="mx-auto flex max-w-[1320px] flex-col items-center gap-8 sm:gap-12 lg:gap-16 px-4 sm:px-6">
+          <h2 className="text-center font-roboto text-[24px] sm:text-[36px] md:text-[48px] lg:text-[64px] font-normal leading-tight text-black">
              Accepted Intraoral Scans
           </h2>
           <div className="relative h-[250px] w-full overflow-hidden rounded-[29px] sm:h-[350px] lg:h-[468px]">
@@ -171,11 +171,11 @@ export default function DigitalSolutionsPage() {
             />
           </div>
            <div className="text-center">
-             <p className="font-roboto text-[28px] sm:text-[36px] lg:text-[46px] leading-snug text-black">
+             <p className="font-roboto text-[18px] sm:text-[24px] md:text-[32px] lg:text-[42px] xl:text-[46px] leading-snug text-black">
                Universal Orthodontic Lab accepts a wide range of intraoral and digital scan formats, including:
              </p>
            </div>
-           <div className="flex flex-wrap justify-center items-center gap-12 lg:gap-20 opacity-90">
+           <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 md:gap-12 lg:gap-20 opacity-90">
              {partnerLogos.map((logo, idx) => (
                 <div key={idx} className="relative h-12 w-32 sm:h-16 sm:w-48 lg:h-20 lg:w-56">
                   <Image src={logo} alt="Partner Logo" fill className="object-contain" />

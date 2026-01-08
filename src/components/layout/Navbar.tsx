@@ -20,7 +20,7 @@ const navLinks = [
     href: "#",
     label: "Appliances",
     dropdown: [
-      { label: "All Appliances", href: "#" },
+      { label: "All Appliances", href: "/appliances" },
       { label: "Perio Max+", href: "/appliances/perio-max" },
       { label: "U Aligner", href: "/aligner" },
     ],

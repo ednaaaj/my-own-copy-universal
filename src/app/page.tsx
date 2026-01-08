@@ -128,13 +128,14 @@ export default function HomePage() {
             solutions through our state-of-the-art digital lab.
           </p>
           <Link
-            href="#"
-            className="relative mt-2 inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-[#068cff] px-8 py-3 text-[14px] font-semibold uppercase tracking-[0.02em] text-white shadow-[0_10px_25px_rgba(6,140,255,0.35)] ring-1 ring-[#4db8ff]/70 transition hover:brightness-105"
+            href="/digital-solutions"
+            className="relative mt-6 inline-flex h-[66px] w-[260px] items-center justify-center gap-3 overflow-hidden rounded-full bg-[#068cff] text-[14px] font-semibold uppercase tracking-[0.02em] text-white shadow-[0_10px_25px_rgba(6,140,255,0.35)] transition hover:brightness-105"
           >
-            <span className="pointer-events-none absolute inset-[1px] rounded-full bg-gradient-to-b from-white/25 to-white/10" />
-            <span className="relative text-white">Our Solutions</span>
-            <span className="relative -mb-[1px] text-base leading-none text-white">
-              →
+            <span className="font-work-sans text-white">Our Solutions</span>
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M2 6H10M10 6L6 2M10 6L6 10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </span>
           </Link>
         </div>
@@ -197,7 +198,7 @@ export default function HomePage() {
         </div>
 
         <div className="relative mx-auto flex max-w-[1326px] flex-col lg:flex-row flex-wrap items-center lg:items-start justify-center gap-6 lg:gap-[31px] px-4 sm:px-6">
-          <ProductCard
+            <ProductCard
             title="Metal Worx"
             subtitle="Laser Sintered"
             accent="#000000"

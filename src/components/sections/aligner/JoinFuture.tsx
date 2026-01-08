@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 
 export function JoinFuture() {
   return (
-    <section className="relative py-20 px-4 md:px-8 bg-white flex justify-center">
+    <section className="relative py-12 sm:py-16 lg:py-20 px-4 md:px-8 bg-white flex justify-center">
       {/* Container matching the rounded orange background */}
-      <div className="w-full max-w-[1720px] bg-[#FEE0C5] rounded-[35px] overflow-hidden relative flex flex-col lg:flex-row items-center justify-between p-8 lg:p-20 gap-12">
+      <div className="w-full max-w-[1720px] bg-[#FEE0C5] rounded-[20px] sm:rounded-[28px] lg:rounded-[35px] overflow-hidden relative flex flex-col lg:flex-row items-center justify-between p-6 sm:p-10 lg:p-20 gap-8 lg:gap-12">
 
         {/* Left Content */}
-        <div className="flex flex-col items-start gap-8 z-10 max-w-[700px]">
-          <h2 className="font-roboto font-normal text-[48px] sm:text-[56px] lg:text-[64px] leading-[1.2] text-black tracking-[0.02em]">
+        <div className="flex flex-col items-center lg:items-start gap-6 lg:gap-8 z-10 max-w-[700px] text-center lg:text-left">
+          <h2 className="font-roboto font-normal text-[28px] sm:text-[40px] lg:text-[56px] xl:text-[64px] leading-[1.2] text-black tracking-[0.02em]">
             Join the future of the Digital Dentistry with
           </h2>
 
