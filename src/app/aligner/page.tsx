@@ -11,7 +11,7 @@ import { UserGuide } from "@/components/sections/aligner/UserGuide";
 export default function AlignerPage() {
   return (
     <main className="min-h-screen bg-white relative">
-      <header className="flex justify-center absolute top-[31px] left-0 w-full z-50">
+      <header className="flex justify-center absolute top-[20px] sm:top-[31px] left-0 w-full z-50 px-4">
         <Navbar />
       </header>
       <AlignerBanner />

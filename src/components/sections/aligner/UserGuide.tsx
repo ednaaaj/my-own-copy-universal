@@ -56,20 +56,20 @@ const steps = [
 
 export function UserGuide() {
   return (
-    <section className="relative py-20 bg-white">
+    <section className="relative py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 flex flex-col items-center">
         {/* Header */}
-        <div className="text-center mb-24">
-            <h2 className="font-roboto font-normal text-[48px] sm:text-[64px] leading-[1.2] text-black mb-4">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-24">
+            <h2 className="font-roboto font-normal text-[28px] sm:text-[42px] lg:text-[64px] leading-[1.2] text-black mb-3 sm:mb-4">
             User Guide for U Aligner Portal
             </h2>
-            <a href="https://www.aligners.uniortholab.com" target="_blank" rel="noopener noreferrer" className="font-work-sans font-normal text-[18px] text-[#272727] hover:text-[#F27128] transition-colors">
+            <a href="https://www.aligners.uniortholab.com" target="_blank" rel="noopener noreferrer" className="font-work-sans font-normal text-[14px] sm:text-[16px] lg:text-[18px] text-[#272727] hover:text-[#F27128] transition-colors">
             www.aligners.uniortholab.com
             </a>
         </div>
 
         {/* Steps List */}
-        <div className="w-full flex flex-col gap-24">
+        <div className="w-full flex flex-col gap-12 sm:gap-16 lg:gap-24">
           {steps.map((step, index) => (
             <motion.div
               key={index}

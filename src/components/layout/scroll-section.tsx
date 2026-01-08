@@ -6,7 +6,7 @@ type ScrollSectionProps = {
   children: ReactNode;
   className?: string;
   intensity?: number;
-  as?: keyof JSX.IntrinsicElements;
+  as?: React.ElementType;
 };
 
 export function ScrollSection({

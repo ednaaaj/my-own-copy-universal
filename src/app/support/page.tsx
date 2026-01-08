@@ -227,7 +227,7 @@ export default function SupportPage() {
   return (
     <main className="bg-white">
       <ScrollSection
-        className="relative isolate w-full overflow-hidden rounded-b-[110px] border-b border-[#e6e6e6] bg-white shadow-sm"
+        className="relative isolate w-full overflow-hidden rounded-b-[36px] sm:rounded-b-[60px] lg:rounded-b-[110px] border-b border-[#e6e6e6] bg-white shadow-sm"
         intensity={0.85}
       >
         <div className="absolute inset-0">
@@ -248,7 +248,7 @@ export default function SupportPage() {
           </header>
 
           <div className="mx-auto flex min-h-[420px] max-w-6xl flex-col items-center justify-center gap-6 px-3 pt-10 pb-4 text-center sm:min-h-[500px] sm:pt-14 lg:min-h-[540px] lg:pt-20">
-            <h1 className="font-display text-[52px] font-normal leading-[1] text-black sm:text-[68px] lg:text-[96px]">
+            <h1 className="font-display text-[36px] sm:text-[52px] lg:text-[68px] xl:text-[96px] font-normal leading-[1] text-black">
               Support
             </h1>
             <p className="max-w-3xl text-[18px] leading-[28px] text-[#272727] sm:text-[20px] sm:leading-[30px]">
@@ -331,7 +331,7 @@ export default function SupportPage() {
           <div className="flex flex-col gap-12 lg:flex-row">
             {/* Left Column: Contact Form */}
             <div className="flex flex-1 flex-col gap-8 rounded-[20px] bg-[#f0f0f0] px-6 py-10 sm:px-10 sm:py-12">
-              <h2 className="font-display text-[42px] font-normal leading-tight text-black sm:text-[52px] lg:text-[64px]">
+              <h2 className="font-display text-[28px] sm:text-[36px] md:text-[42px] lg:text-[52px] xl:text-[64px] font-normal leading-tight text-black">
                 Contact our Sales Team
               </h2>
 
@@ -461,7 +461,7 @@ export default function SupportPage() {
 
           <div className="flex flex-col gap-8">
             <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-              <h2 className="font-display text-[42px] font-normal leading-[1.05] text-black sm:text-[52px] lg:text-[64px]">
+              <h2 className="font-display text-[28px] sm:text-[36px] md:text-[42px] lg:text-[52px] xl:text-[64px] font-normal leading-[1.05] text-black">
                 Document Center
               </h2>
               <div className="w-full md:w-[520px]">
@@ -502,10 +502,10 @@ export default function SupportPage() {
             <div className="h-[1px] w-full bg-[#D9DEDD]" />
           </div>
 
-          <div className="flex flex-col gap-12 xl:flex-row">
+          <div className="flex flex-col gap-12 lg:flex-row xl:flex-row">
             {/* Left Column: Title and Info */}
-            <div className="flex flex-col gap-10 lg:max-w-[500px] xl:max-w-[600px] shrink-0">
-               <h2 className="font-display text-[42px] font-normal leading-[1.05] text-black sm:text-[52px] lg:text-[64px]">
+            <div className="flex flex-col gap-10 lg:max-w-[420px] xl:max-w-[600px] shrink-0">
+               <h2 className="font-display text-[26px] sm:text-[32px] md:text-[42px] lg:text-[52px] xl:text-[64px] font-normal leading-[1.05] text-black">
                 Answers to the frequently asked questions.
               </h2>
 
@@ -594,7 +594,7 @@ export default function SupportPage() {
           <div className="flex flex-col items-center justify-between gap-12 lg:flex-row">
             {/* Left Content */}
             <div className="flex flex-col gap-10 max-w-[734px]">
-              <h2 className="font-roboto text-[42px] font-normal leading-tight text-black sm:text-[52px] lg:text-[64px] lg:leading-[75px] tracking-[0.02em]">
+              <h2 className="font-roboto text-[26px] sm:text-[32px] md:text-[42px] lg:text-[52px] xl:text-[64px] font-normal leading-tight text-black lg:leading-[75px] tracking-[0.02em]">
                 Ensuring Quality, Safety, and Adherence to Industry Standards in Every Step of Our Process.
               </h2>
               <p className="font-work-sans text-[18px] font-normal leading-[30px] text-[#272727]">

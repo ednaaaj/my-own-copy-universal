@@ -41,19 +41,19 @@ export function BecomeCustomerSection({
   };
 
   return (
-    <div className="mx-auto flex max-w-[1320px] flex-col-reverse justify-between gap-10 lg:flex-row lg:items-center">
-      <div className="flex w-full max-w-[460px] shrink-0 flex-col gap-6">
-        <div className="space-y-3">
-          <h2 className="font-roboto text-[42px] font-normal leading-[1.05] text-[#111] sm:text-[52px] lg:text-[64px]">
+    <div className="mx-auto flex max-w-[1320px] flex-col-reverse justify-between gap-8 lg:gap-10 lg:flex-row lg:items-center">
+      <div className="flex w-full max-w-full lg:max-w-[460px] shrink-0 flex-col gap-6">
+        <div className="space-y-3 text-center lg:text-left">
+          <h2 className="font-roboto text-[28px] sm:text-[36px] md:text-[42px] lg:text-[52px] xl:text-[64px] font-normal leading-[1.05] text-[#111]">
             New Customer Questionnaire
           </h2>
-          <p className="max-w-2xl font-work-sans text-[18px] leading-[30px] text-[#272727]">
+          <p className="max-w-2xl mx-auto lg:mx-0 font-work-sans text-[14px] sm:text-[16px] lg:text-[18px] leading-[24px] sm:leading-[30px] text-[#272727]">
             Please fill out the form. Once you submit the form, our friendly
             representative will give you a follow up call.
           </p>
         </div>
 
-        <div className="relative overflow-hidden rounded-[20px] bg-black shadow-[0_16px_28px_rgba(0,0,0,0.14)]">
+        <div className="relative overflow-hidden rounded-[20px] bg-black shadow-[0_16px_28px_rgba(0,0,0,0.14)] mx-auto lg:mx-0 max-w-[500px]">
           <Image
             src={imageSrc}
             alt={imageAlt}
@@ -95,7 +95,7 @@ export function BecomeCustomerSection({
         onSubmit={handleSubmit}
         className="flex w-full max-w-[720px] flex-1 flex-col gap-6 rounded-[20px] bg-[#f0f0f0] px-6 py-7 shadow-[0_16px_24px_rgba(0,0,0,0.06)]"
       >
-        <h2 className="font-roboto text-[42px] font-normal leading-[1.05] text-[#111] sm:text-[48px] lg:text-[52px]">
+        <h2 className="font-roboto text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] xl:text-[52px] font-normal leading-[1.05] text-[#111]">
           {title}
         </h2>
 

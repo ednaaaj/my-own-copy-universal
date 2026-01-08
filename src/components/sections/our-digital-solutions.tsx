@@ -9,7 +9,6 @@ type SolutionItem = {
   title: string;
   description: string;
   image: string;
-  watermark: string;
 };
 
 const solutions: SolutionItem[] = [
@@ -20,7 +19,6 @@ const solutions: SolutionItem[] = [
     description:
       "Partnering with you in utilizing the latest technological advancements. Technology has proven to be reliable and efficient in making orthodontic appliances with more consistent results.",
     image: "/images/main/our-digital-solution/our-digital-solution-digital-planning.png",
-    watermark: "/images/main/our-digital-solution/our-digital-01.png",
   },
   {
     id: "stl-printing",
@@ -29,7 +27,6 @@ const solutions: SolutionItem[] = [
     description: "",
     image:
       "/images/main/our-digital-solution/our-digital-solutions-stl-file-3d-printing.png",
-    watermark: "/images/main/our-digital-solution/our-digital-02.png",
   },
   {
     id: "digital-prescription",
@@ -38,55 +35,63 @@ const solutions: SolutionItem[] = [
     description: "",
     image:
       "/images/main/our-digital-solution/our-digital-solutions-digital-prescription.png",
-    watermark: "/images/main/our-digital-solution/our-digital-03.png",
   },
 ];
 
 export function OurDigitalSolutions() {
   return (
     <ScrollSection className="relative bg-white px-4 py-16 sm:px-6 lg:px-10" intensity={1.1}>
-      <div className="mx-auto mb-25 flex max-w-5xl items-center justify-between">
-        <h2 className="text-[40px] font-normal leading-[1] text-[#1f1f1f] sm:text-[44px]">
+      {/* Header */}
+      <div className="mx-auto flex max-w-[1331px] items-center justify-between mb-8">
+        <h2 className="font-roboto text-[40px] sm:text-[52px] lg:text-[64px] font-normal leading-[1] text-[#1f1f1f]">
           Our Digital Solutions
         </h2>
         <Image
           src="/images/main/our-digital-solution/our-digital-solution-star.svg"
           alt=""
-          width={72}
-          height={72}
-          className="h-18 w-18 parallax-layer"
+          width={90}
+          height={90}
+          className="h-[60px] w-[60px] sm:h-[75px] sm:w-[75px] lg:h-[90px] lg:w-[90px] parallax-layer"
           data-speed="fast"
         />
       </div>
-      <div className="mx-auto mt-4 h-[1px] max-w-5xl bg-black" />
 
-      <div className="relative mx-auto mt-10 flex max-w-5xl flex-col gap-12">
+      {/* Top divider line */}
+      <div className="mx-auto h-[1px] max-w-[1331px] bg-black" />
+
+      {/* Solutions list */}
+      <div className="mx-auto mt-8 max-w-[1331px]">
         {solutions.map((solution, idx) => (
-          <div key={solution.id} className="space-y-4">
-            <div className="flex flex-col lg:grid lg:gap-10 lg:grid-cols-2 lg:items-start">
-              <div className="space-y-6 sm:space-y-10 mt-10 sm:mt-20">
-                <div className="relative h-[100px] parallax-layer" data-speed="slow">
-                  <Image
-                    src={solution.watermark}
-                    alt=""
-                    width={154}
-                    height={125}
-                    className="pointer-events-none absolute left-0 top-[-35px] h-[90px] w-auto select-none object-contain"
-                  />
-                  <p className="relative z-10 pt-6 text-[22px] font-light uppercase tracking-[3px] text-[#1f1f1f] sm:text-[24px]">
+          <div key={solution.id}>
+            {/* Solution Row */}
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between py-12 lg:py-16 gap-8 lg:gap-12">
+              {/* Left side - Number, Title, Description */}
+              <div className="flex-1 max-w-[536px]">
+                {/* Large number watermark */}
+                <div className="relative">
+                  <span className="font-roboto text-[100px] sm:text-[140px] lg:text-[170px] font-medium leading-[0.8] tracking-[2px] text-[#F0F0F0] select-none">
+                    {solution.number}
+                  </span>
+                  {/* Title overlapping the number */}
+                  <h3 className="font-roboto text-[32px] sm:text-[40px] lg:text-[46px] font-light uppercase tracking-[3px] text-black absolute bottom-[10px] sm:bottom-[20px] lg:bottom-[30px] left-0">
                     {solution.title}
-                  </p>
+                  </h3>
                 </div>
-                <p className="max-w-sm text-[14px] font-normal leading-[22px] text-[#272727]">
-                  {solution.description}
-                </p>
+                {/* Description */}
+                {solution.description && (
+                  <p className="mt-8 font-work-sans text-[16px] sm:text-[18px] font-normal leading-[28px] sm:leading-[30px] text-[#272727] max-w-[536px]">
+                    {solution.description}
+                  </p>
+                )}
               </div>
-              <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
+
+              {/* Right side - Image */}
+              <div className="flex justify-center lg:justify-end">
                 <div
-                  className={`overflow-hidden rounded-[16px] bg-[#f0f0f0] shadow-[0_8px_16px_rgba(0,0,0,0.12)] w-full`}
+                  className={`overflow-hidden rounded-[20px] shadow-[0_8px_16px_rgba(0,0,0,0.12)]`}
                   style={{
+                    width: solution.id === "digital-planning" ? "100%" : "100%",
                     maxWidth: solution.id === "digital-planning" ? "703px" : "450px",
-                    aspectRatio: solution.id === "digital-planning" ? "703/360" : "450/245",
                   }}
                 >
                   <Image
@@ -94,14 +99,14 @@ export function OurDigitalSolutions() {
                     alt={solution.title}
                     width={solution.id === "digital-planning" ? 703 : 450}
                     height={solution.id === "digital-planning" ? 360 : 245}
-                    className="h-full w-full object-cover"
+                    className="h-auto w-full object-cover"
                   />
                 </div>
               </div>
             </div>
-            {idx < solutions.length - 1 ? (
-              <div className="h-[1px] w-full bg-black" />
-            ) : null}
+
+            {/* Divider line after each item */}
+            <div className="h-[1px] w-full bg-black" />
           </div>
         ))}
       </div>
