@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 
 const footerLinks = {
   about: [
@@ -28,6 +29,30 @@ const footerLinks = {
 };
 
 export function FooterLight() {
+  const emailInputRef = useRef<HTMLInputElement>(null);
+
+  const handleEmailInput = (e: React.FormEvent<HTMLInputElement>) => {
+    const input = e.currentTarget;
+    // Reset custom validity on input
+    input.setCustomValidity("");
+  };
+
+  const handleEmailInvalid = (e: React.FormEvent<HTMLInputElement>) => {
+    const input = e.currentTarget;
+    // Set custom validation message
+    input.setCustomValidity("Please enter a valid email address.");
+  };
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    const input = emailInputRef.current;
+    if (input && input.checkValidity()) {
+      // TODO: Handle subscription logic
+      alert("Thank you for subscribing!");
+      input.value = "";
+    }
+  };
+
   return (
     <footer className="bg-white">
       {/* Logo and Description Section */}
@@ -137,17 +162,26 @@ export function FooterLight() {
             </h3>
 
             {/* Email Input */}
-            <div className="flex items-center bg-white border border-[#B9B9B9] rounded-[12px] overflow-hidden max-w-[445px]">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 min-w-0 h-[50px] sm:h-[61px] px-3 sm:px-4 font-work-sans text-[14px] sm:text-[16px] text-[#272727] placeholder:text-[#736C6C] bg-transparent border-none focus:outline-none"
-              />
-              <button className="shrink-0 h-[40px] sm:h-[50px] px-3 sm:px-4 mx-1 sm:mx-1.5 bg-[#068CFF] text-white font-work-sans font-medium text-[11px] sm:text-[12px] uppercase rounded-full flex items-center gap-1 sm:gap-2 hover:bg-[#0078E5] transition-colors whitespace-nowrap">
-                Subscribe
-                <span className="text-base sm:text-lg">→</span>
-              </button>
-            </div>
+            <form onSubmit={handleSubscribe}>
+              <div className="flex items-center bg-white border border-[#B9B9B9] rounded-[12px] overflow-hidden max-w-[445px]">
+                <input
+                  ref={emailInputRef}
+                  type="email"
+                  required
+                  placeholder="Enter your email"
+                  onInput={handleEmailInput}
+                  onInvalid={handleEmailInvalid}
+                  className="flex-1 min-w-0 h-[50px] sm:h-[61px] px-3 sm:px-4 font-work-sans text-[14px] sm:text-[16px] text-[#272727] placeholder:text-[#736C6C] bg-transparent border-none focus:outline-none"
+                />
+                <button
+                  type="submit"
+                  className="shrink-0 h-[40px] sm:h-[50px] px-3 sm:px-4 mx-1 sm:mx-1.5 bg-[#068CFF] text-white font-work-sans font-medium text-[11px] sm:text-[12px] uppercase rounded-full flex items-center gap-1 sm:gap-2 hover:bg-[#0078E5] transition-colors whitespace-nowrap"
+                >
+                  Subscribe
+                  <span className="text-base sm:text-lg">→</span>
+                </button>
+              </div>
+            </form>
 
             {/* Contact Info */}
             <div className="space-y-2 pt-2">

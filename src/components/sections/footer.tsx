@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 import { ScrollSection } from "@/components/layout/scroll-section";
 
 const footerLinks = {
@@ -29,6 +30,30 @@ const footerLinks = {
 };
 
 export function Footer() {
+  const emailInputRef = useRef<HTMLInputElement>(null);
+
+  const handleEmailInput = (e: React.FormEvent<HTMLInputElement>) => {
+    const input = e.currentTarget;
+    // Reset custom validity on input
+    input.setCustomValidity("");
+  };
+
+  const handleEmailInvalid = (e: React.FormEvent<HTMLInputElement>) => {
+    const input = e.currentTarget;
+    // Set custom validation message
+    input.setCustomValidity("Please enter a valid email address.");
+  };
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    const input = emailInputRef.current;
+    if (input && input.checkValidity()) {
+      // TODO: Handle subscription logic
+      alert("Thank you for subscribing!");
+      input.value = "";
+    }
+  };
+
   return (
     <footer className="bg-white">
       <ScrollSection
@@ -61,10 +86,14 @@ export function Footer() {
               Sign up for our newsletter and be the first one to see our latest
               news, and get exclusive discounts and promotions!
             </p>
-            <form className="mt-4 flex flex-col sm:flex-row w-full max-w-xl items-stretch sm:items-center gap-3 rounded-[20px] sm:rounded-full bg-[rgba(255,255,255,0.9)] px-3 sm:px-2 py-3 sm:py-2 shadow-[0_10px_18px_rgba(6,140,255,0.18)] backdrop-blur">
+            <form onSubmit={handleSubscribe} className="mt-4 flex flex-col sm:flex-row w-full max-w-xl items-stretch sm:items-center gap-3 rounded-[20px] sm:rounded-full bg-[rgba(255,255,255,0.9)] px-3 sm:px-2 py-3 sm:py-2 shadow-[0_10px_18px_rgba(6,140,255,0.18)] backdrop-blur">
               <input
+                ref={emailInputRef}
                 type="email"
+                required
                 placeholder="Enter your email"
+                onInput={handleEmailInput}
+                onInvalid={handleEmailInvalid}
                 className="h-12 flex-1 rounded-full border-none bg-transparent px-4 text-[15px] font-medium text-[#068CFF] placeholder:text-[#68b9ff] focus:outline-none"
               />
               <button
