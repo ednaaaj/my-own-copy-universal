@@ -8,16 +8,16 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/support", label: "Support" },
   {
-    href: "#",
+    href: "/digital-solutions",
     label: "Digital Solutions",
     dropdown: [
-      { label: "Universal Digital Prescription", href: "#" },
-      { label: "3D Digital Treatment Planning", href: "#" },
-      { label: "3D Printing & Scanning", href: "#" },
+      { label: "Universal Digital Prescription", href: "/digital-solutions" },
+      { label: "3D Digital Treatment Planning", href: "/digital-solutions" },
+      { label: "3D Printing & Scanning", href: "/digital-solutions" },
     ],
   },
   {
-    href: "#",
+    href: "/appliances",
     label: "Appliances",
     dropdown: [
       { label: "All Appliances", href: "/appliances" },
@@ -25,8 +25,8 @@ const navLinks = [
       { label: "U Aligner", href: "/aligner" },
     ],
   },
-  { href: "#", label: "Laser Sintered Appliances" },
-  { href: "#", label: "Marpe" },
+  { href: "/appliances", label: "Laser Sintered Appliances" },
+  { href: "/appliances", label: "Marpe" },
 ];
 
 export function Navbar() {

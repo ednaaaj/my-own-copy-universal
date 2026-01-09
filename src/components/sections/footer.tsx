@@ -1,27 +1,59 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { useRef } from "react";
 import { ScrollSection } from "@/components/layout/scroll-section";
 
 const footerLinks = {
-  about: ["Universal Orthodontic Lab", "CEO’s Greeting"],
-  digitalSolutions: [
-    "Universal Digital Prescription",
-    "STL Cloud Services",
-    "3D Digital Treatment Planning",
-    "3D Printing & Scanning",
+  about: [
+    { label: "Universal Orthodontic Lab", href: "/" },
+    { label: "CEO's Greeting", href: "/" },
   ],
-  appliances: ["All Appliances", "U-Aligner"],
+  digitalSolutions: [
+    { label: "Universal Digital Prescription", href: "/digital-solutions" },
+    { label: "STL Cloud Services", href: "/digital-solutions" },
+    { label: "3D Digital Treatment Planning", href: "/digital-solutions" },
+    { label: "3D Printing & Scanning", href: "/digital-solutions" },
+  ],
+  appliances: [
+    { label: "All Appliances", href: "/appliances" },
+    { label: "U-Aligner", href: "/aligner" },
+  ],
   support: [
-    "FAQ",
-    "Contact Us",
-    "Become a Customer",
-    "Downloadable Forms",
-    "Videos",
+    { label: "FAQ", href: "/support" },
+    { label: "Contact Us", href: "/support" },
+    { label: "Become a Customer", href: "/support" },
+    { label: "Downloadable Forms", href: "/support" },
+    { label: "Videos", href: "/support" },
   ],
 };
 
 export function Footer() {
+  const emailInputRef = useRef<HTMLInputElement>(null);
+
+  const handleEmailInput = (e: React.FormEvent<HTMLInputElement>) => {
+    const input = e.currentTarget;
+    // Reset custom validity on input
+    input.setCustomValidity("");
+  };
+
+  const handleEmailInvalid = (e: React.FormEvent<HTMLInputElement>) => {
+    const input = e.currentTarget;
+    // Set custom validation message
+    input.setCustomValidity("Please enter a valid email address.");
+  };
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    const input = emailInputRef.current;
+    if (input && input.checkValidity()) {
+      // TODO: Handle subscription logic
+      alert("Thank you for subscribing!");
+      input.value = "";
+    }
+  };
+
   return (
     <footer className="bg-white">
       <ScrollSection
@@ -54,10 +86,14 @@ export function Footer() {
               Sign up for our newsletter and be the first one to see our latest
               news, and get exclusive discounts and promotions!
             </p>
-            <form className="mt-4 flex flex-col sm:flex-row w-full max-w-xl items-stretch sm:items-center gap-3 rounded-[20px] sm:rounded-full bg-[rgba(255,255,255,0.9)] px-3 sm:px-2 py-3 sm:py-2 shadow-[0_10px_18px_rgba(6,140,255,0.18)] backdrop-blur">
+            <form onSubmit={handleSubscribe} className="mt-4 flex flex-col sm:flex-row w-full max-w-xl items-stretch sm:items-center gap-3 rounded-[20px] sm:rounded-full bg-[rgba(255,255,255,0.9)] px-3 sm:px-2 py-3 sm:py-2 shadow-[0_10px_18px_rgba(6,140,255,0.18)] backdrop-blur">
               <input
+                ref={emailInputRef}
                 type="email"
+                required
                 placeholder="Enter your email"
+                onInput={handleEmailInput}
+                onInvalid={handleEmailInvalid}
                 className="h-12 flex-1 rounded-full border-none bg-transparent px-4 text-[15px] font-medium text-[#068CFF] placeholder:text-[#68b9ff] focus:outline-none"
               />
               <button
@@ -88,7 +124,7 @@ export function Footer() {
       >
         <div className="mx-auto flex max-w-6xl flex-col gap-8">
           <div className="grid gap-8 border-b border-white/60 pb-8 lg:grid-cols-[0.8fr,1.2fr]">
-            <div className="flex items-start">
+            <Link href="/" className="flex items-start">
               <Image
                 src="/images/main/footer/footer-logo.png"
                 alt="Universal Orthodontic Lab"
@@ -97,7 +133,7 @@ export function Footer() {
                 className="h-[63px] w-auto"
                 priority
               />
-            </div>
+            </Link>
             <p className="max-w-3xl text-[14px] leading-[22px]">
               At Universal Orthodontic Lab, we&apos;re more than just a lab—we&apos;re
               your dedicated partner in delivering exceptional patient care.
@@ -112,9 +148,9 @@ export function Footer() {
                 About
               </p>
               {footerLinks.about.map((item) => (
-                <p key={item} className="cursor-pointer hover:underline">
-                  {item}
-                </p>
+                <Link key={item.label} href={item.href} className="block cursor-pointer hover:underline">
+                  {item.label}
+                </Link>
               ))}
             </div>
             <div className="space-y-3">
@@ -122,9 +158,9 @@ export function Footer() {
                 Digital Solutions
               </p>
               {footerLinks.digitalSolutions.map((item) => (
-                <p key={item} className="cursor-pointer hover:underline">
-                  {item}
-                </p>
+                <Link key={item.label} href={item.href} className="block cursor-pointer hover:underline">
+                  {item.label}
+                </Link>
               ))}
             </div>
             <div className="space-y-3">
@@ -132,9 +168,9 @@ export function Footer() {
                 Appliances
               </p>
               {footerLinks.appliances.map((item) => (
-                <p key={item} className="cursor-pointer hover:underline">
-                  {item}
-                </p>
+                <Link key={item.label} href={item.href} className="block cursor-pointer hover:underline">
+                  {item.label}
+                </Link>
               ))}
             </div>
             <div className="space-y-3">
@@ -143,9 +179,9 @@ export function Footer() {
               </p>
               <div className="grid grid-cols-2 gap-x-6 gap-y-2">
                 {footerLinks.support.map((item) => (
-                  <p key={item} className="cursor-pointer hover:underline">
-                    {item}
-                  </p>
+                  <Link key={item.label} href={item.href} className="cursor-pointer hover:underline">
+                    {item.label}
+                  </Link>
                 ))}
               </div>
             </div>
