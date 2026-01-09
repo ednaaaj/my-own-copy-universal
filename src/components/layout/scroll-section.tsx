@@ -37,13 +37,9 @@ export function ScrollSection({
       );
 
       const shift = normalized * 48 * intensity;
-      const fade = 1 - Math.min(Math.abs(normalized) * 0.45, 0.4);
 
       element.style.setProperty("--section-shift", `${shift}px`);
-      element.style.setProperty(
-        "--section-opacity",
-        `${Math.max(0.6, fade)}`,
-      );
+      // Removed opacity fade - content stays at full opacity
     };
 
     const handleScroll = () => {
@@ -73,7 +69,7 @@ export function ScrollSection({
       className={`scroll-parallax-section ${className}`}
       style={{
         transform: "translateY(var(--section-shift, 0px))",
-        opacity: "var(--section-opacity, 1)",
+        // Removed opacity - content always at full visibility
       }}
     >
       {children}
