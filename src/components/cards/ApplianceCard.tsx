@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useCallback } from "react";
-import { ApplianceModal } from "@/components/modals/ApplianceModal";
+import Link from "next/link";
+import { useState } from "react";
+import { toSlug } from "@/lib/utils";
 
 type ApplianceCardProps = {
   name: string;
@@ -14,11 +15,9 @@ type ApplianceCardProps = {
 // Placeholder SVG as a data URL
 const PLACEHOLDER_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect fill='%23f9f9f9' width='400' height='400'/%3E%3Cpath fill='%23e0e0e0' d='M160 120h80v160h-80z'/%3E%3Ccircle fill='%23e0e0e0' cx='200' cy='100' r='40'/%3E%3Ctext x='200' y='340' text-anchor='middle' fill='%23999' font-family='Arial' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E";
 
-export function ApplianceCard({ name, imageUrl, blackBgImageUrl, description }: ApplianceCardProps) {
+export function ApplianceCard({ name, imageUrl, description }: ApplianceCardProps) {
   const [imgSrc, setImgSrc] = useState(imageUrl);
   const [hasError, setHasError] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  
 
   const handleError = () => {
     if (!hasError) {
@@ -27,20 +26,11 @@ export function ApplianceCard({ name, imageUrl, blackBgImageUrl, description }: 
     }
   };
 
-  const openModal = useCallback(() => {
-    setIsModalOpen(true);
-  }, []);
-
-  const closeModal = useCallback(() => {
-    setIsModalOpen(false);
-  }, []);
+  const slug = toSlug(name);
 
   return (
-    <>
-      <article
-        className="flex flex-col items-start gap-4 w-full max-w-[377px] cursor-pointer group"
-        onClick={openModal}
-      >
+    <Link href={`/appliances/${slug}`}>
+      <article className="flex flex-col items-start gap-4 w-full max-w-[377px] cursor-pointer group">
         {/* Title - Roboto 32px, weight 400, black, letter-spacing 0.02em */}
         <h3 className="font-roboto text-[24px] sm:text-[32px] font-normal leading-[1.2] tracking-[0.02em] text-black w-full group-hover:text-[#0090FF] transition-colors">
           {name}
@@ -85,15 +75,6 @@ export function ApplianceCard({ name, imageUrl, blackBgImageUrl, description }: 
           )}
         </div>
       </article>
-
-      {/* Modal for appliance details */}
-      <ApplianceModal
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        name={name}
-        description={description}
-        blackBgFolderPath={blackBgImageUrl}
-      />
-    </>
+    </Link>
   );
 }
