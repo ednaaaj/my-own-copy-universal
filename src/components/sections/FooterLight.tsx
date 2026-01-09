@@ -1,17 +1,30 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const footerLinks = {
-  about: ["Universal Orthodontic Lab", "CEO's Greeting"],
-  digitalSolutions: [
-    "Universal Digital Prescription",
-    "STL Cloud Services",
-    "3D Digital Treatment Planning",
-    "3D Printing & Scanning",
+  about: [
+    { label: "Universal Orthodontic Lab", href: "/" },
+    { label: "CEO's Greeting", href: "/" },
   ],
-  appliances: ["All Appliances", "U-Aligner"],
-  support: ["FAQ", "Contact Us", "Become a Customer", "Downloadable Forms", "Videos"],
+  digitalSolutions: [
+    { label: "Universal Digital Prescription", href: "/digital-solutions" },
+    { label: "STL Cloud Services", href: "/digital-solutions" },
+    { label: "3D Digital Treatment Planning", href: "/digital-solutions" },
+    { label: "3D Printing & Scanning", href: "/digital-solutions" },
+  ],
+  appliances: [
+    { label: "All Appliances", href: "/appliances" },
+    { label: "U-Aligner", href: "/aligner" },
+  ],
+  support: [
+    { label: "FAQ", href: "/support" },
+    { label: "Contact Us", href: "/support" },
+    { label: "Become a Customer", href: "/support" },
+    { label: "Downloadable Forms", href: "/support" },
+    { label: "Videos", href: "/support" },
+  ],
 };
 
 export function FooterLight() {
@@ -21,7 +34,7 @@ export function FooterLight() {
       <section className="border-t border-[#C1C1C1] px-4 sm:px-6 lg:px-10 pt-10 pb-8">
         <div className="mx-auto max-w-6xl flex flex-col lg:flex-row gap-6 lg:gap-16 items-start lg:items-center">
           {/* Logo - using the same footer-logo but with dark mode filter */}
-          <div className="shrink-0">
+          <Link href="/" className="shrink-0">
             <Image
               src="/images/main/footer/footer-logo.png"
               alt="Universal Orthodontic Lab"
@@ -30,7 +43,7 @@ export function FooterLight() {
               className="h-[80px] sm:h-[100px] lg:h-[126px] w-auto brightness-0"
               priority
             />
-          </div>
+          </Link>
 
           {/* Description */}
           <p className="max-w-[755px] font-work-sans text-[16px] sm:text-[20px] leading-[1.5] text-[#272727]">
@@ -52,12 +65,13 @@ export function FooterLight() {
             </h3>
             <div className="space-y-2">
               {footerLinks.about.map((item) => (
-                <p
-                  key={item}
-                  className="font-work-sans text-[14px] sm:text-[18px] leading-[19px] text-[#505050] cursor-pointer hover:text-[#068CFF] transition-colors"
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="block font-work-sans text-[14px] sm:text-[18px] leading-[19px] text-[#505050] hover:text-[#068CFF] transition-colors"
                 >
-                  {item}
-                </p>
+                  {item.label}
+                </Link>
               ))}
             </div>
           </div>
@@ -69,12 +83,13 @@ export function FooterLight() {
             </h3>
             <div className="space-y-2">
               {footerLinks.digitalSolutions.map((item) => (
-                <p
-                  key={item}
-                  className="font-work-sans text-[14px] sm:text-[18px] leading-[19px] text-[#505050] cursor-pointer hover:text-[#068CFF] transition-colors"
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="block font-work-sans text-[14px] sm:text-[18px] leading-[19px] text-[#505050] hover:text-[#068CFF] transition-colors"
                 >
-                  {item}
-                </p>
+                  {item.label}
+                </Link>
               ))}
             </div>
           </div>
@@ -86,12 +101,13 @@ export function FooterLight() {
             </h3>
             <div className="space-y-2">
               {footerLinks.appliances.map((item) => (
-                <p
-                  key={item}
-                  className="font-work-sans text-[14px] sm:text-[18px] leading-[19px] text-[#505050] cursor-pointer hover:text-[#068CFF] transition-colors"
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="block font-work-sans text-[14px] sm:text-[18px] leading-[19px] text-[#505050] hover:text-[#068CFF] transition-colors"
                 >
-                  {item}
-                </p>
+                  {item.label}
+                </Link>
               ))}
             </div>
           </div>
@@ -103,12 +119,13 @@ export function FooterLight() {
             </h3>
             <div className="space-y-2">
               {footerLinks.support.map((item) => (
-                <p
-                  key={item}
-                  className="font-work-sans text-[14px] sm:text-[18px] leading-[19px] text-[#505050] cursor-pointer hover:text-[#068CFF] transition-colors"
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="block font-work-sans text-[14px] sm:text-[18px] leading-[19px] text-[#505050] hover:text-[#068CFF] transition-colors"
                 >
-                  {item}
-                </p>
+                  {item.label}
+                </Link>
               ))}
             </div>
           </div>
